@@ -1,0 +1,43 @@
+.content{
+  padding: 30px;
+}
+.section{
+  height: 100vh;
+  display: flex;
+  align-items: center; 
+}
+.heading{
+  font-size: 100px;
+  vertical-align: center;
+}
+.left-section{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.image-container{
+  padding-left:100px;
+}
+.image{
+  width: 60%;
+  height: 60%;
+}
+.right-section{
+  flex: 2;
+}
+.subheading{
+  font-size: 20px;
+}
+.text-heading{
+  font-size: 60px;
+  margin-right: 100px;
+}
+.text-heading-2{
+  font-size: 60px;
+}
+.description{
+  line-height: 30px;
+  font-size: 20px;
+  
+}
