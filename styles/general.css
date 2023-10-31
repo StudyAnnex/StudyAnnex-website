@@ -31,5 +31,6 @@ body{
   body{
     padding: 0;
     margin: 0px;
+    background-image: linear-gradient(to bottom right, #98eff1, #1f75a4);
   }
 }
