@@ -35,7 +35,8 @@
       font-size: 60px;
       background-color: #ee5d8bc5;
       position: fixed;
-      height: 70vh; /* Set a maximum height for the overlay-content */
+      height: 70vh;
+      max-height: 100vh; /* Set a maximum height for the overlay-content */
       overflow-y: auto; /* Add a vertical scrollbar when content overflows */
       display: flex;
       flex-direction: column;
