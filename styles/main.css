@@ -56,9 +56,9 @@
   font-weight: 500;
 }
 @media(max-width:720px){
-.welcome-text{
-font-size: 40px;
-}
+  .welcome-text{
+    font-size: 40px;
+  }
 }
 .description-text{
   color: white;
