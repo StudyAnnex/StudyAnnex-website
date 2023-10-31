@@ -4,7 +4,6 @@ p{
 }
 html, body {
   height: 100%;
-  width:100%
   margin: 0;
   padding: 0;
   margin: 0;
@@ -17,8 +16,7 @@ body{
 
 @media(max-width:720px){
   html {
-    overflow: scroll;
-    overflow-x: hidden;
+
     
   }
   ::-webkit-scrollbar {
@@ -33,6 +31,6 @@ body{
     padding: 0;
     margin: 0px;
     background-image: linear-gradient(to bottom right, #98eff1, #1f75a4);
-    width:1000px;
+    width:100%;
   }
 }
