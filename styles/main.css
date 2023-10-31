@@ -5,7 +5,7 @@
   /*background-color: lightgreen;*/
   align-items: center;
   padding: 76px 40px 0 100px;
-  background-color:red;
+  background-image: linear-gradient(to bottom right, #98eff1, #1f75a4);
 }
 @media(max-width:720px){
   .content{
