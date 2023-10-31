@@ -8,8 +8,22 @@
   left: 0;
   right: 0;
 }
+@media(max-width:720px){
+  .header{
+    padding-left:12px;
+    flex-direction: column;
+    display: none;
+  }
+}
 .logo-section{
   flex: 1;
+  height: 100%;
+}
+@media(max-width:720px){
+  .logo-section{
+    width: 100%;
+    height: 50px;
+  }
 }
 .logo-image{
   height: 100%;
@@ -44,6 +58,12 @@
     cursor: pointer;
     transition: opacity .15s;
 }
+@media(max-width:720px){
+  .home, .contacts, .about{
+    
+  }
+}
+
 .about:hover{
   opacity: .7;
 }

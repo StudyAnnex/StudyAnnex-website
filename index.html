@@ -9,9 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 	<link rel="icon" href="icons/logo-icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/general.css">  
+  <link rel="stylesheet" href="styles/header.css">
+
+  <link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+  rel="stylesheet"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+/>
+
+  <link rel="stylesheet" href="styles/mobile-header.css">
+  <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <div class="header">
@@ -21,7 +34,7 @@
         </a>
       </div>
       <div class="menu-section">
-        <a href="index.html">
+        <a href="">
           <button class="home">Home</button>
         </a>
         <a href="https://studyannex.com/contacts">
@@ -32,43 +45,42 @@
         </a>
       </div>
     </div>
-    <div class="content">
+
+    <!--Mobile Menu-->
+    <div class="mobile-menu" id="mobile_menu">
+      <div class="menu">
+        <input type="checkbox" name="" id="menu" />
+        <div class="logo">
+          <div class="logo-section">
+            <a href="https://studyannex.com">
+              <img class="logo-image" src="main-images/logo.png">
+            </a>
+          </div>
+          <label for="menu"></label>
+        </div>
+
+        <div class="items">
+          <a href="" class="item">Home</a>
+          <a href="https://studyannex.com/contacts" class="item">Contacts</a>
+          <a href="https://studyannex.com/about" class="item">About this project</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="content" id="content">
       <div class="left-section">
-        <div class="welcome-text" id="typed-text">
-        </div>
-        <script>
+        <div class="welcome-description-container" id="welcome_description_container">
+          <div class="welcome-text" id="typed-text">
+            Welcome to The Study Annex, a PSBL200 project.
+          </div>
           
-          const text = "Welcome to The Study Annex, a PSBL200 project.";
-          let index = 0;
-          const speed = 50; // Adjust typing speed in milliseconds
-
-          function type() {
-            document.getElementById('typed-text').textContent += text[index];
-            index++;
-
-            // Check if the index has reached the end of the text
-            if (index < text.length) {
-              setTimeout(type, speed); // Continue typing
-            } else{
-              setTimeout(function(){
-                const hiddenElement_1 = document.getElementById('description-text');
-              hiddenElement_1.classList.add('visible');
-              /*const hiddenElement_2 = document.getElementById('buttons-container');
-              hiddenElement_2.classList.add('visible');*/
-              }, 2000);
-              
-            }
-          }
-
-          // Start the typing effect when the page loads
-          window.onload = function() {
-            type();
-          };
-        </script>
-
-        <div id="description-text" class="description-text">
-          Explore this digital library with a wide selection of resources, including textbooks, study guides, question papers, and exam apps available to download for free.
+  
+          <div id="description-text" class="description-text">
+            Explore this digital library with a wide selection of resources, including textbooks, study guides, question papers, and exam apps available to download for free.
+          </div>  
         </div>
+        
           
         <div id="buttons-container" class="buttons-container">
           <a href="https://studyannex.com/papers">
@@ -94,5 +106,36 @@
         </div>
       </div>
     </div>
+
+    <!--Scroll effect code-->
+		<script>
+			// Get the overlay-content, content, and description-text elements
+			const overlayContent = document.querySelector('.welcome-description-container');
+			const content = document.getElementById('content');
+			
+	
+			// Calculate the maximum scroll value until the overlay-content disappears
+			const maxScroll = content.offsetTop + content.offsetHeight - window.innerHeight;
+	
+			// Update overlay-content height based on scroll position
+			window.addEventListener('scroll', function() {
+					const scrollPosition = window.scrollY;
+	
+					// Calculate new height for overlay-content
+					const newHeight = Math.max(80 - (scrollPosition / maxScroll * 80), 0);
+					// Apply the new height to overlay-content
+					overlayContent.style.height = `${newHeight}vh`;
+			});
+	</script>
+    
+
+  <script>
+    var contentHeight = document.getElementById("welcome_description_container");
+    var mobileMenu = document.getElementById("mobile_menu");
+    var mobileMenuHeight = mobileMenu.offsetHeight;
+
+    contentHeight.style.marginTop = mobileMenuHeight*2.21 + "px";
+  </script>
+
   </body>
 </html>
