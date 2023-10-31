@@ -16,7 +16,8 @@ body{
 
 @media(max-width:720px){
   html {
-
+        overflow: scroll;
+    overflow-x: hidden;
     
   }
   ::-webkit-scrollbar {
