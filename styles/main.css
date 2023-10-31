@@ -112,7 +112,7 @@
   .papers-button, .books-button, .apps-button{
     flex: 1;
     margin: 10px 0 0 0;
-    width: 40%;
+    width: 50%;
     font-size: 17x;
     }
 }
