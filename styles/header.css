@@ -2,7 +2,7 @@
   height: 76px;
   padding-left: 46px;
   display: flex;
-  background-color: red;
+  background-image: linear-gradient(to bottom right, #98eff1, #1f75a4);
   position: fixed;
   top: 0;
   left: 0;
