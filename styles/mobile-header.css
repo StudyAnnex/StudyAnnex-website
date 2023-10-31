@@ -100,7 +100,7 @@
     width: 100%;
     padding: 15px;
     border-radius: 0;
-    border-top: 0.5mm solid rgb(52, 53, 71);
+    border-top: 0.5mm solid rgba(42, 195, 255, 0.651);
   }
   #menu:checked ~ .items {
     max-height: 500px;
