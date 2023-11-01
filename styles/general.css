@@ -14,11 +14,13 @@ body{
   display: flex;
 }
 
-@media(max-width:720px){
+@media(max-width:480px){
   html {
     overflow: scroll;
     overflow-x: hidden;
-    background-color:red;
+    width: 100vw;
+    background-color: rgb(59, 59, 59);
+    
   }
   ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
@@ -31,6 +33,7 @@ body{
   body{
     width:100vw;
     padding: 0;
-    margin: 0px;
+    margin: 0;
+    width: auto;
   }
 }

@@ -33,7 +33,7 @@
     <div class="header">
       <div class="logo-section">
         <a href="https://studyannex.com">
-          <img class="logo-image" src="main-images/logo.png">
+          <img id="logo_image" class="logo-image" src="main-images/logo.png">
         </a>
       </div>
       <div class="menu-section">
@@ -81,22 +81,23 @@
   
           <div id="description-text" class="description-text">
             Explore this digital library with a wide selection of resources, including textbooks, study guides, question papers, and exam apps available to download for free.
-          </div>  
+          </div>
+          <img class="drop-down" id="dropDown" src="icons/angle-down.png">
         </div>
         
           
         <div id="buttons-container" class="buttons-container">
-          <a href="https://studyannex.com/papers">
+          <a class="content-link" href="https://studyannex.com/papers">
             <button class="papers-button">
               Question Papers
             </button>
           </a>
-          <a href="https://studyannex.com/books">
+          <a class="content-link" href="https://studyannex.com/books">
             <button class="books-button">
               Books
             </button>
           </a>
-          <a href="https://play.google.com/store/apps/dev?id=8577988121423880677" target="_blank">
+          <a class="content-link" href="https://play.google.com/store/apps/dev?id=8577988121423880677" target="_blank">
             <button class="apps-button">
               Exam Apps
             </button>
@@ -139,6 +140,28 @@
 
     contentHeight.style.marginTop = mobileMenuHeight*2.21 + "px";
     document.getElementById("content").style.marginTop = mobileMenuHeight*2.21 + "px";
+  </script>
+
+
+  <!--Scroll when drop down is click-->
+
+  <script>
+        // Get the welcome-text element by its ID
+    const dropDown = document.getElementById('dropDown');
+
+    // Add a click event listener to the welcome-text element
+    dropDown.addEventListener('click', function() {
+        // Calculate the height of the entire document (including content that overflows)
+        const fullHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
+            document.documentElement.clientHeight, document.documentElement.scrollHeight, 
+            document.documentElement.offsetHeight);
+
+        // Scroll to the bottom of the page
+        window.scrollTo({
+            top: fullHeight,
+            behavior: 'smooth' // Optional: smooth scrolling animation
+        });
+    });
   </script>
 
   </body>

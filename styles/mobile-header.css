@@ -6,14 +6,14 @@
   justify-content: center;
   display: none;
 }
-@media(max-width:720px){
+@media(max-width:480px){
   .mobile-menu {
     display: block;
     z-index: 1000;
     position: fixed;
   }
 }
-@media(max-width:720px){
+@media(max-width:480px){
   .logo-section{
     height:50px
   }
