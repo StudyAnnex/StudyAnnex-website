@@ -57,6 +57,8 @@
     color: white;
     font-size: 60px;
     font-weight: 500;
+    padding-left: 16px;
+    border-left: pink 10px solid;
   }
 
   @media(max-width:480px){
