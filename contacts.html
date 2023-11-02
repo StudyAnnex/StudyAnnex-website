@@ -10,8 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="icons/logo-icon.png" type="image/x-icon">
   <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/mobile-header.css"> 
   <link rel="stylesheet" href="styles/contacts.css">
   <link rel="stylesheet" href="styles/books-general.css">
+
+  <link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+  rel="stylesheet"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+/>
 </head>
 <body>
   <div class="header">
@@ -32,22 +44,51 @@
       </a>
     </div>
   </div>
+
+
+      <!--Mobile Menu-->
+      <div class="mobile-menu" id="mobile_menu">
+        <div class="menu">
+          <input type="checkbox" name="" id="menu" />
+          <div class="logo">
+            <div class="logo-section">
+              <a href="https://studyannex.com">
+                <img id="logo_image" class="logo-image" src="main-images/logo light.png">
+              </a>
+            </div>
+            <label for="menu"></label>
+          </div>
+  
+          <div class="items">
+            <a href="" class="item">Home</a>
+            <a href="https://studyannex.com/contacts" class="item">Contacts</a>
+            <a href="https://studyannex.com/about" class="item">About this project</a>
+          </div>
+        </div>
+      </div>
+
+
   <div class="content">
     <div class="logo-container">
       <img class="logo" src="main-images/logo.png">
     </div>
     <br/>
     <div class="contacts-container">
-      <div class="media-icon">
-        <img src="icons/gmail.png">
+      <div class="contact-div">
+        <div class="media-icon">
+          <img src="icons/gmail.png">
+        </div>
+        &nbsp;
+        <a href="mailto:info@studyannex.com" target="_blank">
+          <div class="media-contact">
+          info@studyannex.com
+          </div>  
+        </a>
       </div>
-      &nbsp;
-      <a href="mailto:info@studyannex.com" target="_blank">
-        <div class="media-contact">
-        info@studyannex.com
-        </div>  
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="contact-div">
+        &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="contact-div">
         <div class="media-icon">
           <img src="icons/whatsapp.png">&nbsp;
         </div>
@@ -56,6 +97,8 @@
             +27 607 102 754
           </div>
         </a>
+      </div>
+      
       </div>
 
     </div>

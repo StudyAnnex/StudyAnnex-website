@@ -2,6 +2,10 @@ p{
   margin-top: 0;
   margin-bottom: 0;
 }
+/* Remove underline from all links */
+a{
+  text-decoration: none;
+}
 html, body { 
   margin: 0;
   padding: 0;
