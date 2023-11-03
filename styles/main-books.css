@@ -10,7 +10,7 @@
 }
 @media(max-width:767px){
   .content{
-    padding: 90px 20px 0 20px;
+    padding: 90px 10px 0 10px;
     
   }
 }
@@ -19,7 +19,7 @@
 }
 @media(max-width:767px){
   .books-container{
-    padding: 10px;
+    padding: 5px;
   }
 }
 .subject-name{
@@ -101,7 +101,6 @@
 .more-icon-container{
   width:100%;
   display: none;
-  
   text-align: center;
   padding: 5px 0;
 }
@@ -114,7 +113,8 @@
 }
 @media(max-width:767px){
   .more-icon{
-    z-index: 12;
+    width: 32px;
+    height: 32px;
   }
 }
 
