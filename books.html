@@ -9,10 +9,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-	<link rel="icon" href="icons/logo-icon.png" type="image/x-icon">
+	  <link rel="icon" href="icons/logo-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/books-general.css">
     <link rel="stylesheet" href="styles/main-books.css">
+
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  
+  <link rel="stylesheet" href="styles/mobile-header.css">
   </head>
   <body>
     <div class="header">
@@ -33,12 +46,46 @@
         </a>
       </div>
     </div>
+
+    <!--Mobile Menu-->
+    <div class="mobile-menu" id="mobile_menu">
+      <div class="menu">
+        <input type="checkbox" name="" id="menu" />
+        <div class="logo">
+          <div class="logo-section">
+            <a href="https://studyannex.com">
+              <img id="logo_image" class="logo-image" src="main-images/logo light.png">
+            </a>
+          </div>
+          <label for="menu"></label>
+        </div>
+
+        <div class="items">
+          <a href="" class="item">Home</a>
+          <a href="https://studyannex.com/contacts" class="item">Contacts</a>
+          <a href="https://studyannex.com/about" class="item">About this project</a>
+        </div>
+      </div>
+    </div>
+
+
     <div class="content">
       <div class="books-container">
-        <div class="books-container-title">
-          STUDY GUIDES and TEXTBOOKS
+        <div class="subject-name">
+          Accounting
         </div>
-        <div class="books-grid">
+        <div class="books-grid" id="AccountingGrid">
+          <div class="book-content">
+            <div class="thumbnail-container">
+              <img class="thumbnail" src="https://i.ibb.co/0nccJFS/grade-12-accounting-study-guide-from-nmu-dut-uj-cover.png" alt="Accounting grade 12 from UJ, NMU, DUT">
+            </div>
+            <a href="https://www.proverto.co.za/documents/StudyGuides/pdf/2023_Accounting.pdf" target="_blank">
+              <button class="download-button">
+                Download
+              </button>
+            </a>
+          </div>
+
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://d20ohkaloyme4g.cloudfront.net/img/document_thumbnails/5d7bf454e3bc6ef1c0dcc4842cb0e0c7/thumb_1200_1697.png"  alt="Mind the Gap Study Guide for Accounting">
@@ -60,7 +107,18 @@
               </button>
             </a>  
           </div>
+        </div>
+        <div class="more-icon-container" id="moreAccounting">
+          <img class="more-icon" src="icons/angle-down round.png" onclick="document.getElementById('AccountingGrid').style.height='auto'; document.getElementById('moreAccounting').style.display='none';">
+        </div>
+      </div>
 
+
+      <div class="books-container">
+        <div class="subject-name">
+          Agricultural Sciences
+        </div>
+        <div class="books-grid" id="AgriculturalSciencesGrid">
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://viaafrika.com/wp-content/uploads/2015/07/Agricultural-Sciences-12-LB-E.jpg" alt="Accounting Grade 12 viafrika">
@@ -71,18 +129,18 @@
               </button>
             </a>
           </div>
-
-          <div class="book-content">
-            <div class="thumbnail-container">
-              <img class="thumbnail" src="https://i.ibb.co/0nccJFS/grade-12-accounting-study-guide-from-nmu-dut-uj-cover.png" alt="Accounting grade 12 from UJ, NMU, DUT">
-            </div>
-            <a href="https://www.proverto.co.za/documents/StudyGuides/pdf/2023_Accounting.pdf" target="_blank">
-              <button class="download-button">
-                Download
-              </button>
-            </a>
+        </div>
+         <div class="more-icon-container" id="moreAgriculturalSciences">
+            <img src="icons/angle-down round.png" onclick="document.getElementById('AgriculturalSciencesGrid').style.height='auto'; document.getElementById('moreAgriculturalSciences').style.display='none';">
           </div>
+      </div>
 
+
+      <div class="books-container">
+        <div class="subject-name">
+          Business Studies
+        </div>
+        <div class="books-grid" id="BusinessStudiesGrid">
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://img2.snapplify.com/f910a75431ba17ff4e840fe3fedd7d35/viaafrikadistrib/9781415463024.jpg?h=340&w=" alt="Business Studies Grade 12">
@@ -93,29 +151,51 @@
               </button>
             </a>
           </div>
+        </div>
+        <div class="more-icon-container" id="moreBusinessStudies">
+           <img src="icons/angle-down round.png" onclick="document.getElementById('BusinessStudiesGrid').style.height='auto'; document.getElementById('moreBusinessStudies').style.display='none';">
+        </div>
+      </div>
 
-          <div class="book-content">
-            <div class="thumbnail-container">
-                <img class="thumbnail" src="https://img2.snapplify.com/343efa51f2e35d8fda7375e7c95e686c/viaafrikadistrib/9781415463055.jpg?h=340&w=" alt="CAT Grade 12">
-            </div>
-            <a href="https://viaafrika.com/wp-content/uploads/2020/06/Gr12-CAT-TG-SG_LR.pdf" target="_blank">
-              <button class="download-button">
-                Download
-              </button>
-            </a>
+
+    <div class="books-container">
+      <div class="subject-name">
+        Computer Application Technology
+      </div>
+      <div class="books-grid" id="ComputerApplicationTechnologyGrid">
+        <div class="book-content">
+          <div class="thumbnail-container">
+              <img class="thumbnail" src="https://img2.snapplify.com/343efa51f2e35d8fda7375e7c95e686c/viaafrikadistrib/9781415463055.jpg?h=340&w=" alt="CAT Grade 12">
           </div>
+          <a href="https://viaafrika.com/wp-content/uploads/2020/06/Gr12-CAT-TG-SG_LR.pdf" target="_blank">
+            <button class="download-button">
+              Download
+            </button>
+          </a>
+        </div>
 
-          <div class="book-content">
-            <div class="thumbnail-container">
-                <img class="thumbnail" src="https://www.siyavula.com/static/common/files/books/cat-gr12.jpg" alt="CAT Grade 12">
-            </div>
-            <a href="https://www.siyavula.com/book-downloads/cat/CAT_theory_book_grade12.epub" target="_blank">
-              <button class="download-button">
-                Download
-              </button>
-            </a>
+        <div class="book-content">
+          <div class="thumbnail-container">
+              <img class="thumbnail" src="https://www.siyavula.com/static/common/files/books/cat-gr12.jpg" alt="CAT Grade 12">
           </div>
+          <a href="https://www.siyavula.com/book-downloads/cat/CAT_theory_book_grade12.epub" target="_blank">
+            <button class="download-button">
+              Download
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="more-icon-container" id="moreComputerApplicationTechnology">
+        <img src="icons/angle-down round.png" onclick="document.getElementById('ComputerApplicationTechnologyGrid').style.height='auto'; document.getElementById('moreComputerApplicationTechnology').style.display='none';">
+      </div>
+    </div> 
 
+
+      <div class="books-container">
+        <div class="subject-name">
+          Economics
+        </div>
+        <div class="books-grid" id="EconomicsGrid">
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://ebooks.textbookcentre.com/media/products/snapplify/978141/9781415463086.jpg" alt="Economics Grade 12">
@@ -137,7 +217,18 @@
               </button>
             </a>
           </div>
-          
+        </div>
+        <div class="more-icon-container" id="moreEconomics">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('EconomicsGrid').style.height='auto'; document.getElementById('moreEconomics').style.display='none';">
+        </div>
+      </div> 
+
+
+      <div class="books-container">
+        <div class="subject-name">
+          Geography
+        </div>
+        <div class="books-grid" id="GeographyGrid">
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://img2.snapplify.com/fcec8328733ebd2cd4b0c67bcf84a4c6/viaafrikadistrib/9781775638520.jpg?h=340&w=" alt="Geography Grade 12">
@@ -159,7 +250,18 @@
               </button>
             </a>
           </div>
+        </div>
+        <div class="more-icon-container" id="moreGeography">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('GeographyGrid').style.height='auto'; document.getElementById('moreGeography').style.display='none';">
+        </div>
+      </div>
 
+
+      <div class="books-container">
+        <div class="subject-name">
+          History
+        </div>
+        <div class="books-grid" id="HistoryGrid">
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://img2.snapplify.com/1ac909569e1bc05dfd1d4467f4b7b704/viaafrikadistrib/9781415463253.jpg?h=340&w=" alt="History Grade 12">
@@ -170,10 +272,21 @@
               </button>
             </a>
           </div>
+        </div>
+        <div class="more-icon-container" id="moreHistory">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('HistoryGrid').style.height='auto'; document.getElementById('moreHistory').style.display='none';">
+        </div>
+      </div>
 
+          
+        <div class="books-container">
+          <div class="subject-name">
+            Information Technology
+          </div>
+          <div class="books-grid" id="InformationTechnologyGrid">
           <div class="book-content">
             <div class="thumbnail-container">
-              <img class="thumbnail" src="https://www.siyavula.com/static/common/files/books/it-gr11.jpg" alt="History Grade 12">
+              <img class="thumbnail" src="https://www.siyavula.com/static/common/files/books/it-gr11.jpg" alt="IT Grade 12">
             </div>
             <a href="https://www.siyavula.com/book-downloads/it/IT_theory_book_grade12.epub" target="_blank">
               <button class="download-button">
@@ -181,7 +294,29 @@
               </button>
             </a>
           </div>
+        </div>
+        <div class="more-icon-container" id="moreInformationTechnology">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('InformationTechnologyGrid').style.height='auto'; document.getElementById('moreInformationTechnology').style.display='none';">
+        </div>
+      </div>
 
+
+      <div class="books-container">
+        <div class="subject-name">
+          Life Sciences
+        </div>
+        <div class="books-grid" id="LifeSciencesGrid">
+          <div class="book-content">
+            <div class="thumbnail-container">
+              <img class="thumbnail" src="https://i.ibb.co/hMDCgLF/life-sciences.png" alt="Life Sciences Grade 12">
+            </div>
+            <a href="https://publications.virtualpaper.com/uploads/24082e47aee483cc634805ae47155df0/f90e3821107a9d9e628a99cb2c606e40/pdf/2017lifescience.pdf" target="_blank">
+              <button class="download-button">
+                Download
+              </button>
+            </a>
+          </div>
+          
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://i.ibb.co/GkT45Bc/grade-12-life-sciences-study-guide-nmu-cover.png" alt="Life Sciences Grade 12">
@@ -215,18 +350,18 @@
               </button>
             </a>
           </div>
+        </div>
+        <div class="more-icon-container" id="moreLifeSciences">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('LifeSciencesGrid').style.height='auto'; document.getElementById('moreLifeSciences').style.display='none';">
+        </div>
+      </div>
 
-          <div class="book-content">
-            <div class="thumbnail-container">
-              <img class="thumbnail" src="https://i.ibb.co/5x12RTB/grade-12-life-sciences-study-guide-cover.png" alt="Life Sciences Grade 12">
-            </div>
-            <a href="https://publications.virtualpaper.com/uploads/24082e47aee483cc634805ae47155df0/f90e3821107a9d9e628a99cb2c606e40/pdf/2017lifescience.pdf" target="_blank">
-              <button class="download-button">
-                Download
-              </button>
-            </a>
-          </div>
 
+      <div class="books-container">
+        <div class="subject-name">
+          Mathematical Literacy
+        </div>
+        <div class="books-grid" id="MathematicalLiteracyGrid">
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://ebooks.textbookcentre.com/media/products/snapplify/978141/9781415463352.jpg" alt="Mathematics Literacy Grade 12">
@@ -248,7 +383,18 @@
               </button>
             </a>
           </div>
+        </div>
+        <div class="more-icon-container" id="moreMathematicalLiteracy">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('MathematicalLiteracyGrid').style.height='auto'; document.getElementById('moreMathematicalLiteracy').style.display='none';">
+        </div>
+      </div>
 
+
+      <div class="books-container">
+        <div class="subject-name">
+          Mathematics
+        </div>
+        <div class="books-grid" id="MathematicsGrid">
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://cdn.24.co.za/files/Cms/General/d/662/7a1a396344ec4826965cbe263dc9af5a.jpg" alt="Mathematics Grade 12">
@@ -292,7 +438,18 @@
               </button>
             </a>
           </div>
+        </div>
+        <div class="more-icon-container" id="moreMathematics">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('MathematicsGrid').style.height='auto'; document.getElementById('moreMathematics').style.display='none';">
+        </div>
+      </div>
 
+
+      <div class="books-container">
+        <div class="subject-name">
+          Physics
+        </div>
+        <div class="books-grid" id="PhysicsGrid">
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://wcedeportal.co.za/sites/eresources/files/MTG%20gr%2012%20PH%20SC.png" alt="Physics Grade 12 mtg">
@@ -303,7 +460,18 @@
               </button>
             </a>
           </div>
+        </div>
+        <div class="more-icon-container" id="morePhysics">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('PhysicsGrid').style.height='auto'; document.getElementById('morePhysics').style.display='none';">
+        </div>
+      </div>
 
+
+      <div class="books-container">
+        <div class="subject-name">
+          Chemistry
+        </div>
+        <div class="books-grid" id="ChemistryGrid">
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://wcedeportal.co.za/sites/eresources/files/MTG%20gr%2012%20CHEM.png" alt="Chemistry Grade 12 mtg">
@@ -314,10 +482,21 @@
               </button>
             </a>
           </div>
+        </div>
+        <div class="more-icon-container" id="moreChemistry">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('ChemistryGrid').style.height='auto'; document.getElementById('moreChemistry').style.display='none';">
+        </div>
+      </div>
 
+
+      <div class="books-container">
+        <div class="subject-name">
+          Physical Science
+        </div>
+        <div class="books-grid" id="PhysicalScienceGrid">
           <div class="book-content">
             <div class="thumbnail-container">
-              <img class="thumbnail" src="https://i.ibb.co/wLTXQgS/grade-12-physical-sciencestudy-guide-cover.png" alt="Physical Science Grade 12">
+              <img class="thumbnail" src="https://i.ibb.co/3NyfNry/physical-sciences.png" alt="Physical Science Grade 12">
             </div>
             <a href="https://publications.virtualpaper.com/uploads/24082e47aee483cc634805ae47155df0/78c86f0f034e2eb44a1909bf58a648d0/pdf/2017physicalscience.pdf" target="_blank">
               <button class="download-button">
@@ -336,7 +515,29 @@
               </button>
             </a>
           </div>
+        </div>
+        <div class="more-icon-container" id="morePhysicalScience">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('PhysicalScienceGrid').style.height='auto'; document.getElementById('morePhysicalScience').style.display='none';">
+        </div>
+      </div>
 
+
+      <div class="books-container">
+        <div class="subject-name">
+          Tourism
+        </div>
+        <div class="books-grid" id="TourismGrid">
+          <div class="book-content">
+            <div class="thumbnail-container">
+              <img class="thumbnail" src="https://i.ibb.co/jH8vfsm/tourism.png" alt="Tourism Grade 12">
+            </div>
+            <a href="https://publications.virtualpaper.com/uploads/24082e47aee483cc634805ae47155df0/d4daddd7541c2561a327401ca108dede/pdf/2017tourism.pdf" target="_blank">
+              <button class="download-button">
+                Download
+              </button>
+            </a>
+          </div>
+          
           <div class="book-content">
             <div class="thumbnail-container">
               <img class="thumbnail" src="https://viaafrika.com/wp-content/uploads/2015/07/Tourism-12-LB-E.jpg" alt="Tourism Grade 12">
@@ -347,17 +548,11 @@
               </button>
             </a>
           </div>
-
-          <div class="book-content">
-            <div class="thumbnail-container">
-              <img class="thumbnail" src="https://i.ibb.co/k9jdbg9/grade-12-tourism-study-guide-cover.png" alt="Tourism Grade 12">
-            </div>
-            <a href="https://publications.virtualpaper.com/uploads/24082e47aee483cc634805ae47155df0/d4daddd7541c2561a327401ca108dede/pdf/2017tourism.pdf" target="_blank">
-              <button class="download-button">
-                Download
-              </button>
-            </a>
-          </div>
+        </div>
+        <div class="more-icon-container" id="moreTourism">
+          <img src="icons/angle-down round.png" onclick="document.getElementById('TourismGrid').style.height='auto'; document.getElementById('moreTourism').style.display='none';">
+        </div>
+      </div>
 
         </div>
       </div>

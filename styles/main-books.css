@@ -8,12 +8,29 @@
   background-image: linear-gradient(to bottom right, #1f75a4, #98eff1);
   
 }
+@media(max-width:767px){
+  .content{
+    padding: 90px 20px 0 20px;
+    
+  }
+}
 .books-container{
   padding: 40px 0;
 }
-.books-container-title{
+@media(max-width:767px){
+  .books-container{
+    padding: 10px;
+  }
+}
+.subject-name{
+  font-size: 30px;
   color: white;
   font-weight: 500;
+}
+@media(max-width:767px){
+  .subject-name{
+    font-size: 16px;
+  }
 }
 .books-grid{
   display: grid;
@@ -22,6 +39,18 @@
   row-gap: 40px;
   padding: 10px 0;
 }
+@media(max-width:767px){
+  .books-grid{
+    height: 30vh;
+    overflow-y: hidden;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: pink;
+    padding: 10px 5px;
+    border-radius: 5px;
+    z-index: 99999;
+  }
+}
+
 .book-content{
   /*background-color: lightblue;*/
   text-align: center;
@@ -35,6 +64,12 @@
   height: 400px;
   width: 100%;
   border-radius: 5px;
+}
+@media(max-width:767px){
+  .thumbnail{
+    height: 25vh;
+    background-color: #ee5d8c;
+  }
 }
 .download-button{
   margin: 5px 0;
@@ -50,9 +85,45 @@
   width: 98%;
   transition: opacity .15s;
 }
+@media(max-width:767px){
+  .download-button{
+    font-size: 12px;
+    padding: 5px;
+  }
+}
 .download-button:hover{
   opacity: .7;
 }
 .download-button:active{
   opacity: .5
+}
+
+.more-icon-container{
+  width:100%;
+  display: none;
+  
+  text-align: center;
+  padding: 5px 0;
+}
+@media(max-width:767px){
+  .more-icon-container{
+    display: block;
+    margin: -10px 0 0 0;
+    display: none;
+  }
+}
+@media(max-width:767px){
+  .more-icon{
+    z-index: 12;
+  }
+}
+
+/*NB: This shows the dropdown icon for subjects that have more than 4 books*/
+@media(max-width:767px){
+  #moreLifeSciences{
+    display: block;
+  }
+  #moreMathematics{
+    display: block;
+  }
 }
