@@ -19,7 +19,7 @@
 }
 @media(max-width:767px){
   .books-container{
-    padding: 5px;
+    padding: 10px 5px;
   }
 }
 .subject-name{
