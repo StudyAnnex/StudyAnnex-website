@@ -106,6 +106,12 @@
   font-weight: 700;
   color: orange;
   text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 76px;
+  background-color: #ffffff; /* Set the background color as needed */
+  z-index: 99; /* Set the z-index to ensure it appears above other elements */
+  border-bottom: 1px solid #ccc;
 }
 .grade-11-title{
   color: lightseagreen;
