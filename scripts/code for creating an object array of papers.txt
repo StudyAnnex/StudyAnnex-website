@@ -1,0 +1,74 @@
+/*
+contentElement.innerHTML = `Computer Applications Technology P1
+Information Technology P1
+Economics P1
+Geography P1
+English HL P2
+Business Studies P1
+Mechanical Technology
+Electrical Technology
+Life Sciences P1
+Accounting P1
+Mathematics P1
+Mathematical Literacy P1
+Technical Mathematics P1
+Mathematics P2
+Mathematical Literacy P2
+Technical Mathematics P2
+Life Sciences P2
+Accounting P2
+History P1
+Physical Sciences P1
+Technical Sciences P1
+Physical Sciences P2
+Technical Sciences P2
+Geography P2
+History P2
+Consumer Studies
+Hospitality Studies
+Information Technology P2
+Civil Technology
+Agricultural Sciences P1
+Religion Studies P1
+Business Studies P2
+Agricultural Sciences P2
+English HL P3
+Engineering Graphics and Design P1
+Computer Applications Technology P2
+English HL P1
+Tourism
+Economics P2
+Engineering Graphics and Design P2
+Religion Studies P2`.replaceAll('\n',',')+',';
+
+let abc = [];
+let text = contentElement.innerText;
+let holder ='';
+
+while(text.length>1) { 
+  try {
+    console.log('working');
+    holder = text.substring(0, text.indexOf(',')); 
+    abc.push(holder);
+    text = text.substring(text.indexOf(',')+1, text.length);
+    
+  } catch (error) {
+    contentElement.innerHTML = abc;
+    break;
+  }
+}
+let newAbc = [];
+abc.forEach((value)=>{
+  //console.log(value);
+  newAbc.push({paperId: generateId(),
+  title:value,
+  subject:value,
+  downloadLink:""});
+});
+abc = newAbc;
+console.log(abc);
+contentElement.innerText = '';
+abc.forEach((value)=>{
+  contentElement.innerText += (','+JSON.stringify(value));
+});
+*/

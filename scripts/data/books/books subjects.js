@@ -1,0 +1,1 @@
+export const subjects = ['Accounting', 'Agricultural Sciences', 'Business Studies', 'Computer Application Technology', 'Economics', 'Geography', 'History', 'Information Technology', 'Life Sciences', 'Mathematical Literacy', 'Mathematics', 'Physical Science', 'Tourism'];
