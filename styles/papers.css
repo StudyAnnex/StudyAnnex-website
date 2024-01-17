@@ -1,21 +1,21 @@
 .content{
   display: flex;
-  padding: 76px 40px 0 100px;
+  padding: 5% 5% 0 5%;
   justify-content: center;
   width: 100vw;
   background-color: rgb(255, 255, 255);
   white-space: nowrap;
+  
 }
 .select-container{
   display: none;
 }
 @media(max-width:767px){
-     .content{
+    .content{
     padding: 100px 10px;
     flex-direction: column;
     align-items: center;
   }
-
   .select-container{
     flex: 1;
     display: flex;
@@ -38,8 +38,9 @@
     background-color: #ee5d8c;
     font-size: 25px;
     font-weight: 700;
+    outline: none;
   }
-  .select-container .icon-container{
+  .select-container .select-icon-container{
     width: 17%;
     height: 100%;
     position: absolute;
@@ -49,7 +50,7 @@
     justify-content: center;
     background-color: #af2e57;
   }
-  .icon-container{
+  .select-icon-container{
     font-size: 20px;
     color: white;
 
@@ -58,48 +59,26 @@
     width: 50%;
     height: 50%;
   }
+
 }
 
-.section-12{
+.section{
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin: 60px 0;
+  margin: 60px 1%;
+  
 }
 @media(max-width:767px){
-  .section-12{
+  .section{
     display: none;
     margin: 0;
     flex: 1;
+    width: auto;
+    margin: 10px;
   }
 }
 
-.section-11{
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin: 60px 0;
-}
-@media(max-width:767px){
-  .section-11{
-    display: none;
-    margin: 0;
-    flex: 1;
-  }
-}
-.section-10{
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin: 60px 0;
-}
-@media(max-width:767px){
-  .section-10{
-    display: none;
-    margin: 0;
-    flex: 1;
-  }
-}
 .grade-12-title, .grade-11-title, .grade-10-title{
   border-radius: 12px 12px 0 0;
   font-size: 25px;
@@ -112,6 +91,7 @@
   background-color: #ffffff; /* Set the background color as needed */
   z-index: 99; /* Set the z-index to ensure it appears above other elements */
   border-bottom: 1px solid #ccc;
+  
 }
 .grade-11-title{
   color: lightseagreen;
@@ -122,11 +102,15 @@
 .paper-container{
   display: flex;
   margin: 10px;
+  color: black;
+  white-space: nowrap;
+  text-wrap:wrap;
 }
 @media(max-width:767px){
   .paper-container{
     display: flex;
-    margin: 5px;
+    margin: 16px 0px;
+    width: 85vw;
   }
 }
 
@@ -137,8 +121,8 @@
   border-radius: 12px 0 0 12px;
   padding: 5px 10px;
   align-items: center;
-  font-size: 16px;
   font-weight: 500;
+  
 }
 .paper-11{
   border: solid 1px lightseagreen;
@@ -146,38 +130,62 @@
 .paper-10{
   border: solid 1px green;
 }
-.download-button-paper-1-12, .download-button-paper-1-11, .download-button-paper-1-10{
-  background-color: orange;
-  width: 50px;
-  height: 30px;
+.js-paper-commerce{
   border: solid 1px orange;
-  border-radius: 0 12px 12px 0;
-  transition: opacity .15s;
+}
+.js-paper-mathematics-Science{
+  border: solid 1px steelblue;
+}
+.js-paper-technology{
+  border: solid 1px seagreen;
+}
+.js-paper-arts{
+  border: solid 1px  coral;
+}
+.js-paper-language{
+  border: solid 1px palevioletred;
 }
 
-.download-button-paper-1-11{
-  background-color: lightseagreen;
-  border: solid 1px lightseagreen;
-}
-.download-button-paper-1-10{
-  background-color: green;
-  border: solid 1px green;
-}
-.download-button-paper-2-12, .download-button-paper-2-11, .download-button-paper-2-10{
-  border: solid 1px orange;
+.download-paper-button-12, .download-paper-button-11, .download-paper-button-10{
   background-color: orange;
+  width: 50px;
+  
+  border: solid 1px orange;
   border-radius: 0 12px 12px 0;
   transition: opacity .15s;
+  cursor: pointer;
 }
-.download-button-paper-2-11{
-  border: solid 1px lightseagreen;
+
+.download-paper-button-11{
   background-color: lightseagreen;
-  border-radius: 0 12px 12px 0;
+  border: solid 1px lightseagreen;
 }
-.download-button-paper-2-10{
-  border: solid 1px green;
+.download-paper-button-10{
   background-color: green;
+  border: solid 1px green;
 }
+
+.js-download-button-commerce{
+  background-color: orange;
+  border: solid 1px orange;
+}
+.js-download-button-mathematics-Science{
+  background-color: steelblue;
+  border: solid 1px steelblue;
+}
+.js-download-button-technology{
+  background-color: seagreen;
+  border: solid 1px seagreen;
+}
+.js-download-button-arts{
+  background-color: coral;
+  border: solid 1px coral;
+}
+.js-download-button-language{
+    background-color: palevioletred;
+  border: solid 1px palevioletred;
+}
+
 .download-icon{
   width: 100%;
   height: 100%;
@@ -204,9 +212,9 @@
   padding:3px 7px;
   font-size: 12px;
 }
-.download-button-paper-1-12:hover, .download-button-paper-1-11:hover, .download-button-paper-1-10:hover, .download-button-paper-2-12:hover, .download-button-paper-2-11:hover, .download-button-paper-2-10:hover{
+.download-paper-button-12:hover, .download-paper-button-11:hover, .download-paper-button-10:hover, .download-button-paper-2-12:hover, .download-button-paper-2-11:hover, .download-button-paper-2-10:hover{
   opacity: 0.7;
 }
-.download-button-paper-1-12:active, .download-button-paper-1-11:active, .download-button-paper-1-10:active, .download-button-paper-2-12:active, .download-button-paper-2-11:active, .download-button-paper-2-10:active{
+.download-paper-button-12:active, .download-paper-button-11:active, .download-paper-button-10:active, .download-button-paper-2-12:active, .download-button-paper-2-11:active, .download-button-paper-2-10:active{
   opacity: 0.5;
 }
