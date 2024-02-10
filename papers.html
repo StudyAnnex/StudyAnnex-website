@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/books-general.css">
     <link rel="stylesheet" href="styles/papers.css">
+    <link rel="stylesheet" href="styles/papers-provincial.css">
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
@@ -33,17 +34,12 @@
         <a href="https://studyannex.com">
           <img class="logo-image" src="main-images/logo.png">
         </a>
-      </div>
+      </div>  
       <div class="menu-section">
-        <a href="https://studyannex.com">
-          <button class="home">Home</button>
-        </a>
-        <a href="https://studyannex.com/contacts">
-          <button class="contacts">Contacts</button>
-        </a>
-        <a href="https://studyannex.com/about">
-         <button class="about">About this project</button>
-        </a>
+        <div id="selectExtra" class="extra-select js-extra-papers">
+          Provincial
+          <img class="provincialIcon" src="images/icons/next.png">
+        </div>
       </div>
     </div>
     
@@ -51,7 +47,7 @@
     <!--Mobile Menu-->
     <header class="mobile-menu" id="mobile_menu">
       <div class="menu">
-        <input type="checkbox" name="" id="menu" />
+        <input type="checkbox" name="" id="menu" class="js-burger-menu"/>
         <div class="logo">
           <div class="logo-section">
             <a href="https://studyannex.com">
@@ -80,15 +76,19 @@
           <!--
             <option disabled = "true" value="Provincial">Provincial (new)</option>
           -->
-          <option disabled = "true" value="Provincial">Provincial</option>
+          <option  value="ProvincialPhy">Provincial Phy</option>
+          <option  value="ProvincialTech">Provincial Tech</option>
         </select>
         <div class="select-icon-container js-select-icon-container">
           <img class="select-icon" src="icons/angle-down bold.png">
         </div>
       </div>
       
+      </div>
+      
     </main>
-      <script type="module" src="scripts/papers.js"></script>
+    
+    <script type="module" src="scripts/papers.js"></script>
 
       
   </body>

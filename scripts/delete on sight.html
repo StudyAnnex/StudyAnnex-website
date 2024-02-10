@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .section-container{
+      display: flex;
+      flex-direction: row;
+      column-gap: 2rem;
+    }
+    .paper-section{
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      flex: 1;
+      max-width: 25%;
+    }
+    .paper-container{
+      border: grey 1px solid;
+      border-radius: 15px;
+      padding: 15px;
+      flex: 1;
+      
+      box-shadow: 1px 1px 10px rgb(206, 204, 204);
+      height: min-content;
+      transition: height 5s;
+    }
+    .paper-container:hover{
+      background-color: rgba(215, 215, 215, 0.518);
+    }
+    .paper-container:active{
+      background-color: rgb(168, 168, 168);    
+    }
+    .drop-icon{
+      flex: 1;
+      text-align: right;
+    }
+    .title-container{
+      display: flex;
+      align-items: center;
+      justify-content: end;
+    }
+    .js-drop-icon-mage{
+      transition: rotate .5s;
+    }
+    .papers-list{
+      display: none;
+      transition: display 3s;
+    }
+    .paper{
+      line-height: 32px;
+    }
+  </style>
+</head>
+<body>
+  <div class="section-container">
+    <div class="paper-section">
+      <div class="paper-container">
+        <div class="title-container">
+          Limpopo September 2023<span class="drop-icon"><img src="../icons/angle-down round.png" class="js-drop-icon-mage"></span>
+        </div>
+        <div class="papers-list js-papers-list">
+          <hr/>
+          <div class="paper js-paper">
+            Paper 1
+          </div>
+          <div class="paper js-paper">
+            Memo 1
+          </div>
+          <div class="paper js-paper">
+            Paper 2
+          </div>
+          <div class="paper js-paper">
+            Memo 2
+          </div>
+        </div>
+      </div>
+  
+      <div class="paper-container">
+        <div class="title-container">
+          Limpopo September 2023<span class="drop-icon"><img src="../icons/angle-down round.png" class="js-drop-icon-mage"></span>
+        </div>
+        <div class="papers-list js-papers-list">
+          <hr/>
+          <div class="paper js-paper">
+            Paper 1
+          </div>
+          <div class="paper js-paper">
+            Memo 1
+          </div>
+          <div class="paper js-paper">
+            Paper 2
+          </div>
+          <div class="paper js-paper">
+            Memo 2
+          </div>
+        </div>
+      </div>
+  
+      <div class="paper-container">
+        <div class="title-container">
+          Limpopo September 2023<span class="drop-icon"><img src="../icons/angle-down round.png" class="js-drop-icon-mage"></span>
+        </div>
+        <div class="papers-list js-papers-list">
+          <hr/>
+          <div class="paper js-paper">
+            Paper 1
+          </div>
+          <div class="paper js-paper">
+            Memo 1
+          </div>
+          <div class="paper js-paper">
+            Paper 2
+          </div>
+          <div class="paper js-paper">
+            Memo 2
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!---ewffew-->
+    <div class="paper-section">
+      <div class="paper-container">
+        <div class="title-container">
+          Limpopo September 2023<span class="drop-icon"><img src="../icons/angle-down round.png" class="js-drop-icon-mage"></span>
+        </div>
+        <div class="papers-list js-papers-list">
+          <hr/>
+          <div class="paper js-paper">
+            Paper 1
+          </div>
+          <div class="paper js-paper">
+            Memo 1
+          </div>
+          <div class="paper js-paper">
+            Paper 2
+          </div>
+          <div class="paper js-paper">
+            Memo 2
+          </div>
+        </div>
+      </div>
+  
+      <div class="paper-container">
+        <div class="title-container">
+          Limpopo September 2023<span class="drop-icon"><img src="../icons/angle-down round.png" class="js-drop-icon-mage"></span>
+        </div>
+        <div class="papers-list js-papers-list">
+          <hr/>
+          <div class="paper js-paper">
+            Paper 1
+          </div>
+          <div class="paper js-paper">
+            Memo 1
+          </div>
+          <div class="paper js-paper">
+            Paper 2
+          </div>
+          <div class="paper js-paper">
+            Memo 2
+          </div>
+        </div>
+      </div>
+  
+      <div class="paper-container">
+        <div class="title-container">
+          Limpopo September 2023<span class="drop-icon"><img src="../icons/angle-down round.png" class="js-drop-icon-mage"></span>
+        </div>
+        <div class="papers-list js-papers-list">
+          <hr/>
+          <div class="paper js-paper">
+            Paper 1
+          </div>
+          <div class="paper js-paper">
+            Memo 1
+          </div>
+          <div class="paper js-paper">
+            Paper 2
+          </div>
+          <div class="paper js-paper">
+            Memo 2
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    dropDownElement = document.querySelector('.js-drop-icon-mage');
+
+    dropDownElement.addEventListener('click', (drop)=>{
+      papersListElement = document.querySelector('.js-papers-list');
+      
+      if((papersListElement.style.display === 'none')||(papersListElement.style.display==='')){
+        //document.querySelector('.paper-container').style.height = 'max-content';
+        papersListElement.style.display = "block";
+        dropDownElement.style.rotate = '180deg';
+      } else {
+        papersListElement.style.display = "none";
+        dropDownElement.style.rotate = '0deg';
+      }
+    });
+  </script>
+</body>
+</html>

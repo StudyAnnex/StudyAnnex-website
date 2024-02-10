@@ -1,0 +1,112 @@
+.section-container{
+  display: flex;
+  flex-direction: row;
+  column-gap: 4rem;
+  padding: 3%;
+  justify-content: center;
+  width: 100%;
+  display: none;
+}
+
+@media(max-width:767px){
+  .section-container{
+    flex-direction: row;
+    width: 80%;
+    column-gap: 0rem;
+    justify-content: start;
+  }
+}
+.provincial-section{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  flex: 1;
+  max-width: 45%;
+  display: none;
+}
+@media(max-width:767px){
+  .provincial-section{
+    max-width: 80%;
+  }
+}
+.paper-wrapper{
+  border: grey 1px solid;
+  border-radius: 15px;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 1px 1px 10px rgb(206, 204, 204);
+  height: min-content;
+  transition: height 5s;
+}
+@media(max-width:767px){
+  .paper-wrapper{
+    margin: 15px;
+  }
+}
+.paper-wrapper:hover{
+  background-color: rgba(69, 138, 69, 0.165);
+}
+.paper-wrapper:active{
+  background-color: rgba(69, 138, 69, 0.835);
+  color: white;
+}
+.drop-icon{
+  flex: 1;
+  text-align: right;
+}
+.title-container{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.js-drop-icon-mage{
+  transition: rotate .5s;
+}
+.papers-list{
+  display: none;
+  transition: display 3s;
+}
+.paper{
+  line-height: 32px;
+}
+a:hover{
+  color: green;
+}
+a:active{
+  color: lightblue;
+}
+.boldify-span{
+  font-weight: bold;
+  color: darkgreen;
+}
+
+
+.extra-select{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.extra-select:hover{
+  opacity: .7;
+}
+.extra-select:active{
+  opacity: .5
+}
+
+.provincialIcon{
+  width: 20px;
+  height: 100%;
+}
+
+.provincialTitle{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.478);
+  position: sticky;
+}
+@media(max-width:767px){
+  .provincialTitle{
+    display: none;
+  }
+} 

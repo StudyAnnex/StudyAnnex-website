@@ -23,11 +23,9 @@ subjects.forEach((subject)=>{
         <div class="thumbnail-container">
           <img class="thumbnail" src="${book.image}" alt="${book.title}">
         </div>
-        <a href="${book.downloadLink}" target="_blank">
-          <button class="download-button">
-            Download
-          </button>
-        </a>
+        <button class="download-button" data-book-id="${book.id}">
+          Download
+        </button>
       </div>
       `;
     }
@@ -46,3 +44,17 @@ subjects.forEach((subject)=>{
 
 
 contentElement.innerHTML = htmlContent;
+
+const downloadButtons = document.querySelectorAll('.download-button');
+downloadButtons.forEach((button)=>{
+  button.addEventListener('click', ()=>{
+    const bookId = button.dataset.bookId;
+    books.forEach((value)=>{
+      if (value.id === bookId) {
+        window.location.href = value.downloadLink;
+        console.log('hello');
+        return;
+      }
+    });
+  });
+});
