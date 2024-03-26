@@ -36,7 +36,7 @@
   width: 100%;
   box-shadow: 1px 1px 10px rgb(206, 204, 204);
   height: min-content;
-  transition: height 5s;
+  transition: height 5s ease-out;
 }
 @media(max-width:767px){
   .paper-wrapper{

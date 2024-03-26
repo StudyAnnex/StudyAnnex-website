@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Papers
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	  <link rel="icon" href="icons/logo-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/books-general.css">
+    <link rel="stylesheet" href="styles/papers.css">
+    <link rel="stylesheet" href="styles/papers-provincial.css">
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="styles/mobile-header.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo-section">
+        <a href="https://studyannex.com">
+          <img class="logo-image" src="main-images/logo.png">
+        </a>
+      </div>  
+      <div class="menu-section">
+        <div id="selectExtra" class="extra-select js-extra-papers">
+          Provincial
+          <img class="provincialIcon" src="images/icons/next.png">
+        </div>
+      </div>
+    </div>
+    
+
+    <!--Mobile Menu-->
+    <header class="mobile-menu" id="mobile_menu">
+      <div class="menu">
+        <input type="checkbox" name="" id="menu" class="js-burger-menu"/>
+        <div class="logo">
+          <div class="logo-section">
+            <a href="https://studyannex.com">
+              <img id="logo_image" class="logo-image" src="main-images/logo light.png">
+            </a>
+          </div>
+          <label for="menu"></label>
+        </div>
+
+        <div class="items">
+          <a href="https://studyannex.com" class="item">Home</a>
+          <a href="https://studyannex.com/contacts" class="item">Contacts</a>
+          <a href="https://studyannex.com/about" class="item">About this project</a>
+        </div>
+      </div>
+    </header>
+
+
+    <main class="content js-content-container">
+      <div class="select-container">
+        <select id="selectGrade" class="select-box js-select-box">
+          <option value="">Select grade</option>
+          <option value="12">Grade 12</option>
+          <option value="11">Grade 11</option>
+          <option value="10">Grade 10</option>
+          <!--
+            <option disabled = "true" value="Provincial">Provincial (new)</option>
+          -->
+          <option  value="ProvincialPhy">Provincial Phy</option>
+          <option  value="ProvincialTech">Provincial Tech</option>
+        </select>
+        <div class="select-icon-container js-select-icon-container">
+          <img class="select-icon" src="icons/angle-down bold.png">
+        </div>
+      </div>
+      
+      </div>
+      
+    </main>
+    
+    <script type="module" src="scripts/papers.js"></script>
+
+      
+  </body>
+</html>
