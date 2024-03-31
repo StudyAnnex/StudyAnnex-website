@@ -1,0 +1,11 @@
+User-agent:*
+Disallow:/styles/
+Disallow:/scripts/
+Disallow:/policy/
+Disallow:/images/
+Disallow:/icons/
+Disallow:/app-ads.txt
+Disallow:/notes.txt
+Disallow:/contacts.html
+
+Sitemap: https://studyannex.com/sitemap.xml
