@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey</title>
+
+  <link rel="stylesheet" href="styles/survey.css">
+</head>
+<body>
+  <div class="bg">
+    <div class="section1 js-section1">
+      <div class="content">
+        <div class="left js-left1">
+          <h3>
+            How would you like to help us out?
+          </h3>
+          <p>
+            If you can spare a few seconds to help answer a couple of questions to help improve the app, that'd be great
+          </p>
+          <div class="buttons section1-buttons">
+            <!--<button class="remind-button">Remind me later</button>-->
+            <button class=" js-section1-button">Start Survey</button>
+          </div>
+        </div>
+        <div class="right js-right1">
+          <img class="open-icon" src="icons/play.png">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="section2 js-section2">
+      <div class="content">
+        <div class="left js-left2">
+          <h3>
+            How helpfull is this app to you?
+            If it's at all helpfull.
+            <br/>
+            Be honest <span class="js-emoji">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          </h3>
+          <div class="answer-container">
+            <div class="rate rate1">
+              <img class="rate-image" src="images/number-1 (1).png">
+            </div>
+            <div class="rate rate2">
+              <img class="rate-image" src="images/number-2.png">
+            </div>
+            <div class="rate rate3">
+              <img class="rate-image" src="images/number-3.png">
+            </div>
+            <div class="rate rate4">
+              <img class="rate-image" src="images/number-4.png">
+            </div>
+            <div class="rate rate5">
+              <img class="rate-image" src="images/number-5.png">
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="js-section2-button">Next</button>
+          </div>
+        </div>
+        <div class="right js-right2">
+          <img class="open-icon" src="icons/play.png">
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="section3 js-section3">
+      <div class="content">
+
+        <form action="" id="surveyForm">
+          <div class="left js-left3">
+            <label for="answer">
+              <h3>
+                How can we improve this app for you?
+              </h3>
+            </label>
+            
+            <div class="answer-container">
+              <input id="answer" type="text" maxlength="500" placeholder="">
+            </div>
+            <div class="buttons">
+              <button type="submit" class="js-section3-button">Next</button>
+            </div>
+          </div>
+        </form>
+        
+        <div class="right js-right3">
+          <img class="open-icon" src="icons/play.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="scripts/survey.js"></script>
+  <script src="scripts/fire.js"></script>
+</body>
+</html>

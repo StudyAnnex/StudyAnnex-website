@@ -7,5 +7,6 @@ Disallow:/icons/
 Disallow:/app-ads.txt
 Disallow:/notes.txt
 Disallow:/contacts.html
+Disallow:/apps/
 
 Sitemap: https://studyannex.com/sitemap.xml
