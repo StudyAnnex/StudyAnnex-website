@@ -13,7 +13,7 @@ body{
   align-items: end;
 }
 .section1{
-  /*margin-bottom: 10%;*/
+  margin-bottom: 1%;
   display: block;
   background: transparent;
 }
@@ -78,7 +78,7 @@ button{
 }
 
 .section2{
-  /*margin-bottom: 10%;*/
+  margin-bottom: 1%;
   display: none;
   background: transparent;
 }
@@ -107,7 +107,7 @@ button{
 }
 
 .section3{
-  /*margin-bottom: 10%;*/
+  margin-bottom: 1%;
   display: none;
   background: transparent;
 }
