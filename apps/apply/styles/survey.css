@@ -13,14 +13,14 @@ body{
   align-items: end;
 }
 .section1{
-  /*margin-bottom: 10%;*/
+  margin-bottom: 10%;
   display: block;
   background: transparent;
 }
 .content{
   display: flex;
   flex-direction: row;
-  width: 85vw;
+  width: 100vw;
   align-content: end;
   text-align: center;
   border-radius: 0 10px 10px 0;
