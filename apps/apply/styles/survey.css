@@ -20,7 +20,7 @@ body{
 .content{
   display: flex;
   flex-direction: row;
-  width: 99vw;
+  width: 97vw;
   align-content: end;
   text-align: center;
   border-radius: 0 10px 10px 0;
