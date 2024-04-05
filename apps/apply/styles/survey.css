@@ -10,7 +10,7 @@ body{
   height: 100vh;
   background: transparent;
   display: flex;
-  align-items: center;
+  align-items: start;
 }
 .section1{
   margin-bottom: 1%;
