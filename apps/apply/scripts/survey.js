@@ -7,6 +7,7 @@ document.querySelector(".js-section1-button").addEventListener('click', ()=>{
   section1.style.display = "none";
   section2.style.display = "block";
   window.location.href = 'finished';
+  window.location.replace('finished');
 });
 
 
