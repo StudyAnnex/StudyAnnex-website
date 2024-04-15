@@ -4,4 +4,5 @@ new features:
 - Anouncements
 - Improved UI
 - Now users can post comments
-- Bug fixes>>
+- Bug fixes
+link:>>
