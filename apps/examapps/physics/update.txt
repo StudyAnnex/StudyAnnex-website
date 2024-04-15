@@ -1,7 +1,7 @@
 ##build no:2*
 version:1.7*
 new features:- Anouncements
-\n- Improved UI
-\n- Now users can post comments
-\n- Bug fixes*
+- Improved UI
+- Now users can post comments
+- Bug fixes*
 link:https://play.google.com/store/apps/details?id=com.pop.quiz*##
