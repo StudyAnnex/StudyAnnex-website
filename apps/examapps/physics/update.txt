@@ -1,4 +1,4 @@
-##build no: 2*
-version: 1.7*
+##build no:2*
+version:1.7*
 new features:- Anouncements\n- Improved UI\n- Now users can post comments\n- Bug fixes*
 link:*##
