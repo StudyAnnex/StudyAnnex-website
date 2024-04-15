@@ -4,4 +4,4 @@ new features:- Anouncements
 - Improved UI
 - Now users can post comments
 - Bug fixes*
-link:https://github.com/StudyAnnex/StudyAnnex-website/blob/main/apps/examapps/physics/update.txt*##
+link:https://play.google.com/store/apps/dev?id=8577988121423880677*##
