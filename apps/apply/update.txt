@@ -1,5 +1,5 @@
 ##build no:4*
-version:1.1*
+version:1.2*
 new features:- Survey to help pick the best universities
 - Bug fixes*
 link:https://play.google.com/store/apps/details?id=apply.to.university.the.study.annex*##
