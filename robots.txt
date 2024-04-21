@@ -4,7 +4,6 @@ Disallow:/scripts/
 Disallow:/policy/
 Disallow:/images/
 Disallow:/icons/
-Disallow:/app-ads.txt
 Disallow:/notes.txt
 Disallow:/contacts.html
 Disallow:/apps/
