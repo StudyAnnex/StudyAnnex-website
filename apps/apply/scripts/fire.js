@@ -21,8 +21,8 @@ function submitForm(e){
 
   //let question = getElementVal('');
   let answer = getElementVal('answer');
-  console.log('Hellooooo');
-  
+  console.log('Hel1looooo');
+
   saveAnswer(answer);
 };
 
