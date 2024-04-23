@@ -1,0 +1,14 @@
+.announcement-1{
+background:red
+}
+h2{
+background-color:blue;
+  margin:0;
+}
+.date{
+background:cyan;
+}
+.description-1{
+background:green;
+display:none;
+}
