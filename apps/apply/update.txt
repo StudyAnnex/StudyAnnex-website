@@ -1,6 +1,0 @@
-##build no:3*
-version:1.2*
-new features:- Survey to help you pick the best universities
-- Now you can see application progress as you fill the form
-- Bug fixes*
-link:https://play.google.com/store/apps/details?id=apply.to.university.the.study.annex*##
