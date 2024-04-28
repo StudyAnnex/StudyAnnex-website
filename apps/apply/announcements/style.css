@@ -1,18 +1,17 @@
 body{
-  align-text:center;
-  justify-text:center;
+  font-family: roboto, arial;
 }
 .announcement-1{
-background:red
+  background:rgb(216, 216, 216);
+  border-radius:16px;
+  padding: 12px;
 }
 h2{
-background-color:blue;
   margin:0;
 }
 .date{
-background:cyan;
+  font-size:14px;
 }
 .description-1{
-background:green;
-display:none;
+  display: none;
 }
