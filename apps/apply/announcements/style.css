@@ -2,6 +2,12 @@ body{
   font-family: roboto, arial;
 }
 .announcement-1{
+  padding: 8px 8px;
+}
+.announcement-2{
+  padding: 8px 8px;
+}
+.announcements{
   background:rgb(216, 216, 216);
   border-radius:16px;
   padding: 12px;
@@ -13,5 +19,8 @@ h2{
   font-size:14px;
 }
 .description-1{
+  display: none;
+}
+.description-2{
   display: none;
 }

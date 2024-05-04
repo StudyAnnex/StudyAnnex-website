@@ -20,3 +20,16 @@ announcement.addEventListener('click', ()=>{
     description.style.display = "block";
   }
 });
+
+
+const announcement2 = document.querySelector(".announcement-2")
+announcement2.addEventListener('click', ()=>{
+  
+  const description2 = document.querySelector('.description-2');
+
+  if(description2.style.display==="block"){
+    description2.style.display = "none";
+  } else {
+    description2.style.display = "block";
+  }
+});
