@@ -1,7 +1,4 @@
-##build no:5*
+##build no:7*
 version:1.3*
-new features:- Survey to help pick universities
-- Updated prospectus
-- Now users can see the selected documents before upload
-- Bug fixes*
+new features:- School leaving years update*
 link:https://play.google.com/store/apps/details?id=apply.to.university.the.study.annex*##
