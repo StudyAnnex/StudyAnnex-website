@@ -1,12 +1,10 @@
 body{
   font-family: roboto, arial;
 }
-.announcement-1{
+.announcement-1, .announcement-2, .announcement-3{
   padding: 8px 8px;
 }
-.announcement-2{
-  padding: 8px 8px;
-}
+
 .announcements{
   background:rgb(216, 216, 216);
   border-radius:16px;
@@ -18,9 +16,6 @@ h2{
 .date{
   font-size:14px;
 }
-.description-1{
-  display: none;
-}
-.description-2{
+.description-1, .description-2, .description-3{
   display: none;
 }
