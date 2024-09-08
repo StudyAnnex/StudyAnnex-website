@@ -4,6 +4,5 @@ new features:- Complete over overhaul of prospectus view
 - Users can now start their OWN universities applications
 - Added university showcase videos as a tour guide
 - Added LOCATE feature to pin point the location of a university
-- Updated prospectus
-- Updated status links*
+- Updated prospectus and status links*
 link:https://play.google.com/store/apps/details?id=apply.to.university.the.study.annex*##
