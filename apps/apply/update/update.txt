@@ -1,4 +1,4 @@
 ##build no:9*
-version:1.4*
+version:1.5*
 new features:- School leaving years updated*
 link:https://play.google.com/store/apps/details?id=apply.to.university.the.study.annex*##
