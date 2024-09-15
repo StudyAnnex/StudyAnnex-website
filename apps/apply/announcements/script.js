@@ -59,3 +59,16 @@ announcement4.addEventListener('click', ()=>{
     description4.style.display = "block";
   }
 });
+
+
+const announcement5 = document.querySelector(".announcement-5")
+announcement5.addEventListener('click', ()=>{
+  
+  const description5 = document.querySelector('.description-5');
+
+  if(description5.style.display==="block"){
+    description5.style.display = "none";
+  } else {
+    description5.style.display = "block";
+  }
+});
