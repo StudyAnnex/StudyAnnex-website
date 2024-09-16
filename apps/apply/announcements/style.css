@@ -1,7 +1,7 @@
 body{
   font-family: roboto, arial;
 }
-.announcement-1, .announcement-2, .announcement-3, .announcement-4, .announcement-5{
+.announcement-1, .announcement-2, .announcement-3, .announcement-4, .announcement-5, .announcement-6{
   padding: 8px 8px;
 }
 
@@ -16,6 +16,6 @@ h2{
 .date{
   font-size:14px;
 }
-.description-1, .description-2, .description-3, .description-4, .description-5{
+.description-1, .description-2, .description-3, .description-4, .description-5, .description-5{
   display: none;
 }
