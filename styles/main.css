@@ -145,12 +145,10 @@
       padding: 10px;
       }
   }
-  @media(max-width:767px){
     .article{
       background-color:white;
       color:blue;
     }
-  }
   .papers-button:hover, .books-button:hover, .apps-button:hover{
     box-shadow: -5px -5px 10px rgba(0, 0, 0, .15);
   }
