@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Sciences - Photosynthesis</title>
+    <style>
+        :root {
+            --primary-color: #2d6a4f;
+            --secondary-color: #40916c;
+            --accent-color: #95d5b2;
+            --light-bg: #d8f3dc;
+            --text-color: #1b4332;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: var(--text-color);
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            background-image: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .lesson-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+        }
+
+        .experiment-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--secondary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .objectives {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .material-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .time-marker {
+            color: var(--secondary-color);
+            font-weight: bold;
+            text-align: right;
+            padding-right: 1rem;
+            border-right: 2px solid var(--accent-color);
+        }
+
+        .activity-content {
+            padding-left: 1rem;
+        }
+
+        .key-concept {
+            background-color: var(--light-bg);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .assessment-criteria {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .assessment-criteria li {
+            margin: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .assessment-criteria li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .section {
+                padding: 1rem;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .time-marker {
+                border-right: none;
+                border-bottom: 2px solid var(--accent-color);
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Photosynthesis: Nature's Solar Power</h1>
+        <p>Grade 5 Natural Sciences</p>
+    </div>
+
+    <div class="lesson-info">
+        <div>
+            <strong>Duration:</strong> 90 minutes
+        </div>
+        <div>
+            <strong>Grade Level:</strong> 5th Grade
+        </div>
+        <div>
+            <strong>Subject:</strong> Natural Sciences
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Learning Objectives</h2>
+        <div class="objectives">
+            <ul>
+                <li>Explain the process of photosynthesis and its importance for life on Earth</li>
+                <li>Identify the key components required for photosynthesis</li>
+                <li>Conduct a simple experiment to demonstrate photosynthesis</li>
+                <li>Connect photosynthesis to everyday life and environmental issues</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Key Concepts</h2>
+        <div class="key-concept">
+            <h3>What is Photosynthesis?</h3>
+            <p>Photosynthesis is the process by which plants convert light energy into chemical energy (glucose) using carbon dioxide and water.</p>
+        </div>
+        <div class="key-concept">
+            <h3>Essential Components</h3>
+            <ul>
+                <li>Sunlight (Light Energy)</li>
+                <li>Carbon Dioxide (CO₂)</li>
+                <li>Water (H₂O)</li>
+                <li>Chlorophyll</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Materials Needed</h2>
+        <div class="materials-grid">
+            <div class="material-card">
+                <h3>For Demonstration</h3>
+                <ul>
+                    <li>Potted plants</li>
+                    <li>Clear plastic bags</li>
+                    <li>Rubber bands</li>
+                    <li>Iodine solution</li>
+                    <li>White paper</li>
+                </ul>
+            </div>
+            <div class="material-card">
+                <h3>For Student Activities</h3>
+                <ul>
+                    <li>Worksheets</li>
+                    <li>Colored pencils</li>
+                    <li>Magnifying glasses</li>
+                    <li>Plant leaves</li>
+                </ul>
+            </div>
+            <div class="material-card">
+                <h3>Visual Aids</h3>
+                <ul>
+                    <li>Photosynthesis diagram</li>
+                    <li>Interactive whiteboard</li>
+                    <li>Plant cell model</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Lesson Structure</h2>
+        <div class="timeline">
+            <div class="time-marker">15 mins</div>
+            <div class="activity-content">
+                <h3>Introduction & Engagement</h3>
+                <ul>
+                    <li>Show fresh plants and ask: "How do plants make their own food?"</li>
+                    <li>Brainstorm prior knowledge about plants and sunlight</li>
+                    <li>Introduce the term "photosynthesis"</li>
+                </ul>
+            </div>
+
+            <div class="time-marker">25 mins</div>
+            <div class="activity-content">
+                <h3>Direct Instruction</h3>
+                <ul>
+                    <li>Explain photosynthesis process using visual aids</li>
+                    <li>Demonstrate the role of chlorophyll</li>
+                    <li>Show animation of the process</li>
+                </ul>
+            </div>
+
+            <div class="time-marker">30 mins</div>
+            <div class="activity-content">
+                <h3>Guided Practice & Experiment</h3>
+                <div class="experiment-box">
+                    <h4>Leaf Starch Test Experiment</h4>
+                    <ol>
+                        <li>Cover part of a leaf with black paper</li>
+                        <li>Leave plant in sunlight for several hours</li>
+                        <li>Test for starch using iodine</li>
+                        <li>Observe color changes</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="time-marker">15 mins</div>
+            <div class="activity-content">
+                <h3>Independent Practice</h3>
+                <ul>
+                    <li>Complete photosynthesis diagram</li>
+                    <li>Write explanation in science journals</li>
+                    <li>Create concept maps</li>
+                </ul>
+            </div>
+
+            <div class="time-marker">5 mins</div>
+            <div class="activity-content">
+                <h3>Closure</h3>
+                <ul>
+                    <li>Review key concepts</li>
+                    <li>Exit ticket completion</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Differentiation Strategies</h2>
+        <div class="materials-grid">
+            <div class="material-card">
+                <h3>Visual Learners</h3>
+                <ul>
+                    <li>Color-coded diagrams</li>
+                    <li>Process animations</li>
+                    <li>Visual vocabulary cards</li>
+                </ul>
+            </div>
+            <div class="material-card">
+                <h3>Kinesthetic Learners</h3>
+                <ul>
+                    <li>Role-play activities</li>
+                    <li>Hands-on experiments</li>
+                    <li>Movement-based games</li>
+                </ul>
+            </div>
+            <div class="material-card">
+                <h3>Advanced Learners</h3>
+                <ul>
+                    <li>Additional research projects</li>
+                    <li>Complex experiments</li>
+                    <li>Real-world applications</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Assessment</h2>
+        <ul class="assessment-criteria">
+            <li>Accurate completion of photosynthesis diagram</li>
+            <li>Clear explanation of process in science journal</li>
+            <li>Active participation in experiments</li>
+            <li>Exit ticket responses</li>
+            <li>Connection to real-world applications</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Extension Activities</h2>
+        <div class="materials-grid">
+            <div class="material-card">
+                <h3>Home Experiments</h3>
+                <ul>
+                    <li>Growing plants in different conditions</li>
+                    <li>Documenting plant growth</li>
+                    <li>Creating time-lapse videos</li>
+                </ul>
+            </div>
+            <div class="material-card">
+                <h3>Research Projects</h3>
+                <ul>
+                    <li>Climate change effects on photosynthesis</li>
+                    <li>Plants in different ecosystems</li>
+                    <li>Agricultural applications</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

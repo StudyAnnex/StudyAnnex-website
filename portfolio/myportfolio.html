@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Cwenga Tshingila - Aspiring School Teacher">
+    <title>Cwenga Tshingila - Teaching Portfolio</title>
+    <style>
+        /* Previous styles remain the same until navigation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-sm);
+            border-radius: 8px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-md) var(--spacing-sm);
+            width: 100%;
+            position: relative;
+        }
+
+        header .container {
+            text-align: center;
+        }
+
+       /* Enhanced Mobile Navigation */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    position: absolute;
+    right: var(--spacing-md);
+    top: var(--spacing-md);
+    cursor: pointer;
+    z-index: 2;
+    padding: var(--spacing-xs);
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 25px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 8px;
+}
+
+.nav-toggle-label span::after {
+    top: 8px;
+}
+
+/* Hamburger animation */
+.nav-toggle:checked + .nav-toggle-label span {
+    background: transparent;
+}
+
+.nav-toggle:checked + .nav-toggle-label span::before {
+    transform: rotate(45deg);
+    bottom: 0;
+}
+
+.nav-toggle:checked + .nav-toggle-label span::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+nav {
+    background-color: var(--secondary-color);
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    /* Reduced padding */
+    padding: 0.25rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    display: block;
+    /* Increased font size for desktop */
+    font-size: 1.1rem;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+    .nav-toggle-label {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    nav a {
+        padding: var(--spacing-sm);
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        /* Reset font size for mobile */
+        font-size: 0.9rem;
+    }
+
+    nav a:hover {
+        background-color: rgba(255,255,255,0.1);
+    }
+}
+
+        /* Rest of the previous styles remain the same */
+        main {
+            padding: var(--spacing-sm) 0;
+        }
+
+        section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: var(--spacing-md);
+            width: 100%;
+            overflow: hidden;
+        }
+
+        section > * {
+            padding: var(--spacing-md);
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        h2 {
+            font-size: clamp(1.25rem, 4vw, 2rem);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: var(--spacing-xs);
+            margin-bottom: var(--spacing-md);
+        }
+
+        h3 {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: var(--spacing-md) auto;
+            display: block;
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: var(--spacing-md);
+            height: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: var(--spacing-sm) 0;
+            border-radius: 8px;
+        }
+
+        ul {
+            padding-left: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 4px;
+            width: 100%;
+            text-align: center;
+            margin-top: var(--spacing-sm);
+        }
+
+        @media (min-width: 768px) {
+            .btn {
+                width: auto;
+            }
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-md) 0;
+            margin-top: var(--spacing-lg);
+            text-align: center;
+            width: 100%;
+        }
+
+        .mb-1 { margin-bottom: var(--spacing-sm); }
+        .mb-2 { margin-bottom: var(--spacing-md); }
+        .p-1 { padding: var(--spacing-sm); }
+        .p-2 { padding: var(--spacing-md); }
+	.yt-container{
+	    display:flex;
+	    align-items:center;
+	    justify-content: center;
+	}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Cwenga Tshingila</h1>
+            <p>Aspiring School Teacher</p>
+	    <p>Bachelor of Education, Nelson Mandela University</p>
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#philosophy">Philosophy</a></li>
+                    <li><a href="#lessons">Lessons</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#classroom">Classroom</a></li>
+		    <li><a href="#cv">Curriculum Vitae</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="container">
+            <section id="introduction">
+                <img src="images.jpeg">
+                <div class="p-2">
+                    <h2>Introduction</h2>
+                    <p class="mb-2">Welcome to my teaching portfolio! I am a student teacher completing my Bachelor of Education at Nelson Mandela University, specializing in Intersen Education with a focus on STEM integration.</p>
+                    
+                    <ul>
+                        <li>Bachelor of Education in Intersen Teaching(Expected 2025)</li>
+                        <li>Major in Mathematics, NS/Tec, English HL</li>
+			<!--
+                        <li>TESOL Certification</li>
+			-->
+                    </ul>
+                </div>
+            </section>
+
+            <section id="philosophy">
+
+                <div class="p-2">
+                    <h2>Philosophy of Education</h2>
+                    <p class="mb-2">I believe that every student has the potential to succeed when provided with appropriate support and engaging learning 			opportunities. This core conviction drives my approach to create an inclusive classroom environment where diverse learning styles are not just 			acknowledged, but celebrated. By carefully scaffolding instruction, differentiating content, and maintaining high expectations while offering 			individualized guidance, I help students build both confidence and competence. I recognize that meaningful learning occurs when students can 			connect course material to their own experiences and interests, so I strive to design relevant, real-world applications that spark curiosity 			and foster critical thinking. Through formative assessment and regular feedback, I can identify where students need additional support or 			greater challenges, allowing me to adjust my teaching strategies to meet them where they are while gradually building their capacity for 			independent learning. This student-centered approach, combined with my unwavering belief in each learner's capabilities, creates a foundation 			for academic growth and lifelong learning.</p>
+		    <div class="yt-container">
+		    <iframe width="560" height="315" src="https://www.youtube.com/embed/qn_TA4rWXr8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		    </div>
+
+                </div>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3>Student-Centered Learning</h3>
+                        <p>Creating experiences that connect with students' interests and prior knowledge.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Inclusive Education</h3>
+                        <p>Building a classroom where diversity is celebrated and all students feel valued.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Growth Mindset</h3>
+                        <p>Fostering an environment where mistakes are learning opportunities.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="lessons">
+                <div class="p-2">
+                    <h2>Sample Lesson Plans</h2>
+                </div>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3>Fractions in Real Life</h3>
+                        <p>Grade 4 Mathematics</p>
+                        <ul>
+                            <li>Hands-on measurement activities</li>
+                            <li>Recipe scaling project</li>
+                            <li>Digital fraction tools</li>
+                        </ul>
+                        <a href="lesson plan 1.html" class="btn">View Lesson</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Photosynthesis</h3>
+                        <p>Grade 5 Natural Sciences</p>
+                        <ul>
+                            <li>Direct Instruction</li>
+                            <li>Guided Practice & Experiment</li>
+                            <li>Independent Practice</li>
+                        </ul>
+                        <a href="lesson plan 2.html" class="btn">View Lesson</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="classroom">
+                <div class="p-2">
+                    <h2>Classroom Management</h2>
+                </div>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3>Positive Behavior Support</h3>
+                        <ul>
+                            <li>Clear expectations and routines</li>
+                            <li>Recognition of positive behaviors</li>
+                            <li>Restorative practices</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Parent Communication</h3>
+                        <ul>
+                            <li>Weekly digital newsletters</li>
+                            <li>Class website updates</li>
+                            <li>Parent-teacher conference templates</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="cv">
+                <div class="p-2">
+                    <h2>My Curriculum Vitae</h2>
+                </div>
+                
+                <p><a href="C. Tshingila CV.pdf">Download my CV</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Contact: s223212768@mandela.ac.za</p>
+            <p>© 2024 Cwenga Tshingila - Teaching Portfolio</p>
+        </div>
+    </footer>
+</body>
+</html>
