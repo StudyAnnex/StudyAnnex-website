@@ -376,8 +376,15 @@
     </main>
 
     <footer>
-        <p>© 2024 Claire Oosthuizen - Teaching Portfolio</p>
+        <p>© <span id="year"></span> Claire Oosthuizen - Teaching Portfolio</p>
         <p>Contact: Oosthuizenclaire154@gmail.com</p>
     </footer>
+        <script>
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+        
+        // Display the year in the span with id "year"
+        document.getElementById('year').textContent = currentYear;
+    </script>
 </body>
 </html>
