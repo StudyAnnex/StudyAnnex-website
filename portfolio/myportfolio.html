@@ -441,8 +441,16 @@ nav a {
     <footer>
         <div class="container">
             <p>Contact: s223212768@mandela.ac.za</p>
-            <p>© 2024 Cwenga Tshingila - Teaching Portfolio</p>
+            <p>© <span id="year"></span> Cwenga Tshingila - Teaching Portfolio</p>
         </div>
     </footer>
+	    <script>
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+        
+        // Display the year in the span with id "year"
+        document.getElementById('year').textContent = currentYear;
+    </script>
+
 </body>
 </html>
