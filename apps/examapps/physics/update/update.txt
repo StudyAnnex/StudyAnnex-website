@@ -1,5 +1,6 @@
 ##build no:3*
 version:1.1*
 new features:- June 2024 question papers
-- Feature request*
+- Feature request
+- Fixed crashes when not connected*
 link:https://play.google.com/store/apps/details?id=com.physical.sciences&pcampaignid=web_share*##
