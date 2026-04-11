@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="utf-8" />
+    <title>View Question Paper</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #fafafa; }
+        .paperCard { border: 1px solid #ddd; padding: 15px; max-width: 800px; margin: auto; background: #fff; }
+        h2 { margin-top: 0; }
+        button { padding: 6px 12px; margin-top: 10px; cursor: pointer; }
+        .backLink { display: inline-block; margin-bottom: 15px; color: #0066cc; text-decoration: underline; cursor: pointer; }
+    </style>
+    </head>
+    <body>
+    <div class="backLink" onclick="window.history.back()">← Back to List</div>
+    <div id="paperDisplay">Loading...</div>
+    <script type="module" src="scripts/learn.js"></script>
+    </body>
+</html>

@@ -1,0 +1,983 @@
+<br>
+                <a href="#contact" class="cta-button cta-primary">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section section-dark">
+        <div class="content-wrapper">
+            <h2 class="section-title">Ready to Start Learning?</h2>
+            <p class="section-subtitle">Get in touch and begin your journey to academic excellence</p>
+            
+            <div class="contact-container">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--mustard);">Contact Us Today</h3>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 3rem;">Choose your preferred way to connect with us</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3>📞 Call Us</h3>
+                        <a href="tel:0823125720">082 312 5720</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📧 Email Us</h3>
+                        <a href="mailto:bukhosilearninghub@gmail.com">bukhosilearninghub@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📍 Visit Us</h3>
+                        <p>Port Elizabeth, Eastern Cape</p>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/27823125720?text=Hi%2C%20I'm%20interested%20in%20tutoring%20sessions%20at%20Bukhosi%20Learning%20Hub" class="whatsapp-button" target="_blank">
+                    💬 Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div style="font-size: 1.5rem; font-weight: 800; background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem;">
+            BUKHOSI LEARNING HUB
+        </div>
+        <p style="margin: 1rem 0;">Wear the Crown of Wisdom</p>
+        <p>&copy; 2024 Bukhosi Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference or default to dark
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        body.setAttribute('data-theme', currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const theme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukhosi Learning Hub - Wear the Crown of Wisdom</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --mustard: #DAA520;
+            --gradient-gold: linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #B8860B 100%);
+        }
+
+        /* Dark mode colors (default) */
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-tertiary: #1a1a1a;
+            --text-primary: #FFFFFF;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(212, 175, 55, 0.1);
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-hover: rgba(212, 175, 55, 0.05);
+        }
+
+        /* Light mode colors */
+        [data-theme="light"] {
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #e9ecef;
+            --text-primary: #0a0a0a;
+            --text-secondary: #6c757d;
+            --border-color: rgba(212, 175, 55, 0.2);
+            --card-bg: rgba(0, 0, 0, 0.02);
+            --card-hover: rgba(212, 175, 55, 0.08);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--bg-primary);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            background: var(--gradient-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--bg-primary);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-gold);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-gold);
+            padding: 10px 25px;
+            border-radius: 25px;
+            color: #0a0a0a !important;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+        }
+
+        .theme-toggle:hover {
+            background: var(--card-hover);
+        }
+
+        .theme-icon {
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .theme-icon.sun {
+            color: #DAA520;
+        }
+
+        .theme-icon.moon {
+            color: #94a3b8;
+        }
+
+        [data-theme="light"] .theme-icon.sun {
+            display: none;
+        }
+
+        [data-theme="dark"] .theme-icon.moon {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--text-primary);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 180px 5% 100px;
+            text-align: center;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(218, 165, 32, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+
+        .hero-tagline {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-primary {
+            background: var(--gradient-gold);
+            color: var(--black);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--mustard);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .float-1 {
+            top: 20%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+        }
+
+        .float-2 {
+            top: 60%;
+            right: 10%;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation-delay: 2s;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--bg-secondary);
+            padding: 80px 5%;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-box {
+            padding: 2rem;
+            border-radius: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            background: var(--card-hover);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Main Content Sections */
+        .content-section {
+            padding: 100px 5%;
+        }
+
+        .content-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background: var(--bg-primary);
+        }
+
+        .section-light {
+            background: var(--bg-secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--mustard);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--mustard);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+            background: var(--card-hover);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Pricing Card */
+        .pricing-card {
+            background: var(--card-bg);
+            border: 2px solid var(--mustard);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+
+        .price-tag {
+            font-size: 4rem;
+            font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .price-tag span {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 4rem;
+            border-radius: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            border-radius: 20px;
+            background: var(--card-hover);
+        }
+
+        .contact-item h3 {
+            color: var(--mustard);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a:hover {
+            color: var(--mustard);
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background: #25D366;
+            color: var(--white);
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin-top: 2rem;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 4rem 5%;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--bg-primary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                gap: 1.5rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-img">B</div>
+                <div class="logo-text">BUKHOSI</div>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#subjects">Subjects</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact" class="nav-cta">Get Started</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </button>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-element float-1"></div>
+        <div class="floating-element float-2"></div>
+        
+        <div class="hero-content">
+            <h1>Master Mathematics & Sciences</h1>
+            <p class="hero-tagline">Wear the Crown of Wisdom</p>
+            <p class="hero-description">Join Bukhosi Learning Hub and unlock your academic potential with expert tutoring for Grades 8-12</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button cta-primary">Start Learning Today</a>
+                <a href="#subjects" class="cta-button cta-secondary">Explore Subjects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">8-12</div>
+                <div class="stat-label">Grade Levels</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Subjects Offered</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">R300</div>
+                <div class="stat-label">Per Month</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Learning Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="content-section section-dark">
+        <div class="content-wrapper">
+            <h2 class="section-title">Why Choose Bukhosi?</h2>
+            <p class="section-subtitle">We're committed to transforming education through personalized learning experiences</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Excellence in Every Lesson</h3>
+                    <p>At Bukhosi Learning Hub, we believe that every student has the potential to excel. Our innovative teaching methods and dedicated tutors create an environment where learning becomes an exciting journey.</p>
+                    <p>Whether you prefer online flexibility or in-person interaction, we adapt to your learning style and schedule.</p>
+                </div>
+                <div>
+                    <div style="background: var(--gradient-gold); padding: 3rem; border-radius: 30px; text-align: center;">
+                        <h3 style="color: var(--black); font-size: 2rem; margin-bottom: 1rem;">Our Mission</h3>
+                        <p style="color: var(--black); font-size: 1.1rem; font-weight: 500;">Empowering students to achieve academic excellence through innovative teaching</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section id="subjects" class="content-section section-light">
+        <div class="content-wrapper">
+            <h2 class="section-title">Our Subjects</h2>
+            <p class="section-subtitle">Comprehensive coverage of key STEM subjects for academic success</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>Mathematics</h3>
+                    <p><strong>Grades 8-12</strong></p>
+                    <p>From basic algebra to advanced calculus, we make math concepts clear and applicable</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>Physical Science</h3>
+                    <p><strong>Grades 10-12</strong></p>
+                    <p>Master physics and chemistry with hands-on experiments and real-world applications</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Technical Science</h3>
+                    <p><strong>Grades 10-12</strong></p>
+                    <p>Bridge theory and practice with applied science for technical careers</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧮</div>
+                    <h3>Technical Mathematics</h3>
+                    <p><strong>Grades 10-12</strong></p>
+                    <p>Practical mathematics designed for technical and vocational excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="content-section section-dark">
+        <div class="content-wrapper">
+            <h2 class="section-title">How We Help You Succeed</h2>
+            <p class="section-subtitle">Tailored learning solutions for every student's journey</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👤</div>
+                    <h3>One-on-One Tutoring</h3>
+                    <p>Get undivided attention with personalized sessions that target your specific learning needs</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Group Classes</h3>
+                    <p>Learn collaboratively in small groups where ideas flow and understanding deepens</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
+                    <h3>Exam Preparation</h3>
+                    <p>Intensive coaching sessions designed to boost confidence and maximize exam performance</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📚</div>
+                    <h3>Homework Assistance</h3>
+                    <p>Never struggle alone - get expert help with assignments and projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="content-section section-light">
+        <div class="content-wrapper">
+            <h2 class="section-title">Simple, Affordable Pricing</h2>
+            <p class="section-subtitle">Quality education that doesn't break the bank</p>
+            
+            <div class="pricing-card">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--mustard);">All-Inclusive Learning</h3>
+                <div class="price-tag">R300 <span>/month</span></div>
+                <p style="font-size: 1.2rem; color: var(--gray); margin: 2rem 0;">Online and Physical Classes Available</p>
+                <ul style="list-style: none; text-align: left; display: inline-block; margin: 2rem 0;">
+                    <li style="padding: 0.5rem 0; color: var(--gray);">✓ All subjects included</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray);">✓ Flexible scheduling</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray);">✓ Expert tutors</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray);">✓ Study materials provided</li>
+                    <li style="padding: 0.5rem 0; color: var(--gray);">✓ Ongoing support</li>
+                </ul>
+                <br>
+                <a href="#contact" class="cta-button cta-primary">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section section-dark">
+        <div class="content-wrapper">
+            <h2 class="section-title">Ready to Start Learning?</h2>
+            <p class="section-subtitle">Get in touch and begin your journey to academic excellence</p>
+            
+            <div class="contact-container">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--mustard);">Contact Us Today</h3>
+                <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 3rem;">Choose your preferred way to connect with us</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3>📞 Call Us</h3>
+                        <a href="tel:0823125720">082 312 5720</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📧 Email Us</h3>
+                        <a href="mailto:bukhosilearninghub@gmail.com">bukhosilearninghub@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📍 Visit Us</h3>
+                        <p style="color: var(--gray);">Port Elizabeth, Eastern Cape</p>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/27823125720?text=Hi%2C%20I'm%20interested%20in%20tutoring%20sessions%20at%20Bukhosi%20Learning%20Hub" class="whatsapp-button" target="_blank">
+                    💬 Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div style="font-size: 1.5rem; font-weight: 800; background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem;">
+            BUKHOSI LEARNING HUB
+        </div>
+        <p style="margin: 1rem 0;">Wear the Crown of Wisdom</p>
+        <p>&copy; 2024 Bukhosi Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

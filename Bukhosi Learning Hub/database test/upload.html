@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Upload Question Paper</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    label { display:block; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <h1>Upload Question Paper</h1>
+  <form id="uploadForm">
+    <input id="title" placeholder="Title (e.g. June Exam 2025)" required /><br>
+    <label>Subject
+      <select id="subject" required>
+        <option value="">Select</option>
+        <option>Mathematics</option>
+        <option>Physical Sciences</option>
+        <option>Technical Sciences</option>
+        <option>Technical Maths</option>
+      </select>
+    </label>
+    <label>Grade
+      <input id="grade" placeholder="Grade 12" required />
+    </label>
+    <label>Question Paper (image)
+      <input id="qp" type="file" accept="image/*" required />
+    </label>
+    <label>Memo (image)
+      <input id="memo" type="file" accept="image/*" required />
+    </label>
+    <label>Video Explainer
+      <input id="video" type="file" accept="video/*" required />
+    </label>
+    <button type="submit">Upload</button>
+  </form>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+    import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+
+   // Firebase config
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+    apiKey: "AIzaSyAEXmhnrZs2YpL-OLbZ2tp78SNVTdsi80I",
+    authDomain: "bukhosi-learning-hub.firebaseapp.com",
+    projectId: "bukhosi-learning-hub",
+    storageBucket: "bukhosi-learning-hub.firebasestorage.app",
+    messagingSenderId: "444459719123",
+    appId: "1:444459719123:web:3f719cd57ecc1b5a21b726",
+    measurementId: "G-V13MLEQ3KN"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
+
+    async function uploadFile(file, folder) {
+      const fileRef = ref(storage, `${folder}/${Date.now()}_${file.name}`);
+      await uploadBytes(fileRef, file);
+      return await getDownloadURL(fileRef);
+    }
+
+    document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const title = document.getElementById("title").value.trim();
+      const subject = document.getElementById("subject").value;
+      const grade = document.getElementById("grade").value.trim();
+      const qp = document.getElementById("qp").files[0];
+      const memo = document.getElementById("memo").files[0];
+      const video = document.getElementById("video").files[0];
+
+      if (!title || !subject || !grade || !qp || !memo || !video) {
+        return alert("Fill all fields, good boy.");
+      }
+
+      try {
+        // upload all three in parallel
+        const [qpUrl, memoUrl, videoUrl] = await Promise.all([
+          uploadFile(qp, "questionPapers"),
+          uploadFile(memo, "memos"),
+          uploadFile(video, "videos")
+        ]);
+
+        // write a single Firestore doc with title (no 'topic' field)
+        await addDoc(collection(db, "questionPapers"), {
+          title,
+          subject,
+          grade,
+          questionPaperUrl: qpUrl,
+          memoImageUrl: memoUrl,
+          videoUrl: videoUrl,
+          timestamp: serverTimestamp()
+        });
+
+        alert("Upload complete.");
+        e.target.reset();
+      } catch (err) {
+        console.error("Upload error:", err);
+        alert("Upload failed. Check console.");
+      }
+    });
+  </script>
+</body>
+</html>

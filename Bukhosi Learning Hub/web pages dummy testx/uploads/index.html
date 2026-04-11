@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Paper Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .upload-section {
+            background: #f8f9ff;
+            border: 3px dashed #4facfe;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .upload-section:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .upload-section.dragover {
+            border-color: #667eea;
+            background: #e8f2ff;
+            transform: scale(1.02);
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .upload-btn {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+
+        .papers-list {
+            margin-top: 30px;
+        }
+
+        .paper-item {
+            background: white;
+            border: 1px solid #e1e5e9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .paper-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .paper-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .paper-details {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4facfe;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 25px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Question Paper Manager</h1>
+            <p>Upload and organize question papers for your students</p>
+        </div>
+
+        <div class="content">
+            <!-- Upload Section -->
+            <div class="upload-section" id="uploadSection">
+                <h3>📤 Upload Question Paper</h3>
+                <p>Drag and drop files here or click to browse</p>
+                <input type="file" id="fileInput" class="file-input" accept=".pdf,.doc,.docx,.jpg,.png">
+                <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                    Choose File
+                </button>
+            </div>
+
+            <!-- File Details Form -->
+            <div id="fileDetailsForm" style="display: none;">
+                <div class="form-group">
+                    <label for="paperTitle">Question Paper Title:</label>
+                    <input type="text" id="paperTitle" placeholder="e.g., Math Chapter 5 - Algebra">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject">
+                        <option value="">Select Subject</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Science">Science</option>
+                        <option value="English">English</option>
+                        <option value="History">History</option>
+                        <option value="Geography">Geography</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="grade">Grade/Class:</label>
+                    <input type="text" id="grade" placeholder="e.g., Grade 10, Class 12">
+                </div>
+
+                <button class="upload-btn" onclick="uploadFile()">
+                    📤 Upload Question Paper
+                </button>
+            </div>
+
+            <!-- Loading -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Uploading question paper...</p>
+            </div>
+
+            <!-- Status Messages -->
+            <div id="statusMessage"></div>
+
+            <!-- Search and Filter -->
+            <div id="papersSection" style="display: none;">
+                <h3>📋 Uploaded Question Papers</h3>
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search question papers..." onkeyup="filterPapers()">
+                
+                <div class="papers-list" id="papersList">
+                    <!-- Papers will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple in-memory storage (in real app, you'd use Firebase)
+        let uploadedPapers = [];
+        let selectedFile = null;
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPapers();
+            setupDragAndDrop();
+        });
+
+        // Setup drag and drop functionality
+        function setupDragAndDrop() {
+            const uploadSection = document.getElementById('uploadSection');
+            
+            uploadSection.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                uploadSection.classList.add('dragover');
+            });
+
+            uploadSection.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                uploadSection.classList.remove('dragover');
+            });
+
+            uploadSection.addEventListener('drop', function(e) {
+                e.preventDefault();
+                uploadSection.classList.remove('dragover');
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFileSelect(files[0]);
+                }
+            });
+
+            // File input change event
+            document.getElementById('fileInput').addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    handleFileSelect(e.target.files[0]);
+                }
+            });
+        }
+
+        // Handle file selection
+        function handleFileSelect(file) {
+            // Validate file type
+            const allowedTypes = ['application/pdf', 'application/msword', 
+                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                                'image/jpeg', 'image/png', 'image/jpg'];
+            
+            if (!allowedTypes.includes(file.type)) {
+                showStatus('Please select a valid file (PDF, DOC, DOCX, JPG, PNG)', 'error');
+                return;
+            }
+
+            // Check file size (max 10MB)
+            if (file.size > 10 * 1024 * 1024) {
+                showStatus('File size should be less than 10MB', 'error');
+                return;
+            }
+
+            selectedFile = file;
+            document.getElementById('fileDetailsForm').style.display = 'block';
+            showStatus(`File selected: ${file.name}`, 'success');
+        }
+
+        // Upload file function
+        function uploadFile() {
+            if (!selectedFile) {
+                showStatus('Please select a file first', 'error');
+                return;
+            }
+
+            const title = document.getElementById('paperTitle').value.trim();
+            const subject = document.getElementById('subject').value;
+            const grade = document.getElementById('grade').value.trim();
+
+            if (!title || !subject || !grade) {
+                showStatus('Please fill in all fields', 'error');
+                return;
+            }
+
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+
+            // Simulate file upload (in real app, upload to Firebase Storage)
+            setTimeout(() => {
+                // Create paper object
+                const paper = {
+                    id: Date.now(),
+                    title: title,
+                    subject: subject,
+                    grade: grade,
+                    fileName: selectedFile.name,
+                    fileSize: formatFileSize(selectedFile.size),
+                    uploadDate: new Date().toLocaleDateString(),
+                    fileData: selectedFile // In real app, this would be a download URL
+                };
+
+                // Add to storage
+                uploadedPapers.push(paper);
+                savePapers();
+
+                // Reset form
+                resetForm();
+                
+                // Hide loading
+                document.getElementById('loading').style.display = 'none';
+                
+                // Show success message
+                showStatus('Question paper uploaded successfully!', 'success');
+                
+                // Refresh papers list
+                displayPapers();
+                document.getElementById('papersSection').style.display = 'block';
+            }, 2000);
+        }
+
+        // Reset form
+        function resetForm() {
+            selectedFile = null;
+            document.getElementById('fileDetailsForm').style.display = 'none';
+            document.getElementById('paperTitle').value = '';
+            document.getElementById('subject').value = '';
+            document.getElementById('grade').value = '';
+            document.getElementById('fileInput').value = '';
+        }
+
+        // Display papers
+        function displayPapers() {
+            const papersList = document.getElementById('papersList');
+            
+            if (uploadedPapers.length === 0) {
+                papersList.innerHTML = '<p style="text-align: center; color: #666;">No question papers uploaded yet.</p>';
+                return;
+            }
+
+            papersList.innerHTML = uploadedPapers.map(paper => `
+                <div class="paper-item">
+                    <div class="paper-title">${paper.title}</div>
+                    <div class="paper-details">
+                        📚 ${paper.subject} | 🎓 ${paper.grade} | 📅 ${paper.uploadDate} | 📄 ${paper.fileSize}
+                    </div>
+                    <button class="download-btn" onclick="downloadPaper(${paper.id})">
+                        📥 Download
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Download paper
+        function downloadPaper(paperId) {
+            const paper = uploadedPapers.find(p => p.id === paperId);
+            if (paper && paper.fileData) {
+                // Create download link
+                const url = URL.createObjectURL(paper.fileData);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = paper.fileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                showStatus(`Downloaded: ${paper.fileName}`, 'success');
+            }
+        }
+
+        // Filter papers
+        function filterPapers() {
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const paperItems = document.querySelectorAll('.paper-item');
+            
+            paperItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Utility functions
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                statusDiv.innerHTML = '';
+            }, 5000);
+        }
+
+        // Save to localStorage (in real app, save to Firebase)
+        function savePapers() {
+            // Note: In a real app, you wouldn't store file data in localStorage
+            // This is just for demonstration
+            const papersToSave = uploadedPapers.map(paper => ({
+                ...paper,
+                fileData: null // Don't save file data to localStorage
+            }));
+            localStorage.setItem('questionPapers', JSON.stringify(papersToSave));
+        }
+
+        // Load from localStorage
+        function loadPapers() {
+            const saved = localStorage.getItem('questionPapers');
+            if (saved) {
+                uploadedPapers = JSON.parse(saved);
+                if (uploadedPapers.length > 0) {
+                    displayPapers();
+                    document.getElementById('papersSection').style.display = 'block';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>All Question Papers</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    .grade { font-size: 1.4em; font-weight: 700; margin-top:20px; }
+    .subjectRow { margin-left: 12px; display:flex; align-items:center; justify-content:space-between; }
+    .titles { margin-left: 28px; margin-top:6px; }
+    .titleLink { cursor:pointer; color:#0066cc; text-decoration:underline; display:block; margin:4px 0; }
+    .noData { color:#888; }
+  </style>
+</head>
+<body>
+  <h1>All Question Papers</h1>
+  <div id="results"></div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAEXmhnrZs2YpL-OLbZ2tp78SNVTdsi80I",
+      authDomain: "bukhosi-learning-hub.firebaseapp.com",
+      projectId: "bukhosi-learning-hub",
+      storageBucket: "bukhosi-learning-hub.firebasestorage.app",
+      messagingSenderId: "444459719123",
+      appId: "1:444459719123:web:3f719cd57ecc1b5a21b726",
+      measurementId: "G-V13MLEQ3KN"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function loadAll() {
+      const snapshot = await getDocs(collection(db, "questionPapers"));
+      if (snapshot.size === 0) {
+        document.getElementById("results").innerHTML = '<div class="noData">No papers found. Upload some via the admin page.</div>';
+        return;
+      }
+
+      // group by grade -> subject -> array of docs
+      const grouped = {};
+      snapshot.forEach(docSnap => {
+        const data = docSnap.data();
+        const grade = data.grade || "Unknown Grade";
+        const subject = data.subject || "Unknown Subject";
+
+        if (!grouped[grade]) grouped[grade] = {};
+        if (!grouped[grade][subject]) grouped[grade][subject] = [];
+        grouped[grade][subject].push({ id: docSnap.id, ...data });
+      });
+
+      const results = document.getElementById("results");
+      results.innerHTML = "";
+
+      Object.keys(grouped).sort().forEach(grade => {
+        const gDiv = document.createElement("div");
+        gDiv.className = "grade";
+        gDiv.textContent = grade;
+        results.appendChild(gDiv);
+
+        Object.keys(grouped[grade]).sort().forEach(subject => {
+          const sRow = document.createElement("div");
+          sRow.className = "subjectRow";
+          const sTitle = document.createElement("div");
+          sTitle.textContent = subject;
+          sRow.appendChild(sTitle);
+          results.appendChild(sRow);
+
+          const titlesDiv = document.createElement("div");
+          titlesDiv.className = "titles";
+          grouped[grade][subject].forEach(paper => {
+            const a = document.createElement("div");
+            a.className = "titleLink";
+            a.textContent = paper.title || "(Untitled)";
+            a.onclick = () => {
+              window.location.href = `view.html?id=${paper.id}`;
+            };
+            titlesDiv.appendChild(a);
+          });
+          results.appendChild(titlesDiv);
+        });
+      });
+    }
+
+    loadAll();
+  </script>
+</body>
+</html>
