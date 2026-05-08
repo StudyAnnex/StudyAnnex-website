@@ -1,258 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukhosi Learning Hub - Wear the Crown of Wisdom</title>
-    <meta name="description" content="Join Bukhosi Learning Hub for expert tutoring in Mathematics and Sciences for Grades 8-12. Affordable, personalized learning solutions.">
-    <link rel="icon" type="image/jpeg" href="images/icon.png">
-    <link rel="stylesheet" href="styles/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <title>Bukhosi Learning Hub</title>
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header>
-        <nav>
-            <div class="logo-text"><a href="#home">BUKHOSI LEARNING HUB</a></div>
-                <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#subjects">Subjects</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact" class="nav-cta">Get Started</a></li>
-                <li>
-                    <div class="theme-toggle" id="themeToggle">
-                        <div class="toggle-track">
-                            <div class="toggle-thumb">
-                                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21" fill="none">
-                                    <rect x="0.864258" y="0.963867" width="19.2" height="19.2" rx="9.6" fill="#FFF2D3"></rect>
-                                    <path d="M10.464 3.364v1.8m5.091.309l-1.272 1.272m3.381 3.819h-1.8m-.309 5.09l-1.272-1.272m-3.819 1.582v1.8m-3.818-3.382l-1.273 1.273m-.309-5.091h-1.8m3.382-3.819L5.373 5.473m8.091 5.09a3 3 0 11-6 0 3 3 0 016 0z" stroke="#E3A91D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
-                                    <rect x="0.799805" width="19.2" height="19.2" rx="9.6" fill="#E3A91D"></rect>
-                                    <path d="M18.201 12.002A7.8 7.8 0 017.998 1.799 7.802 7.802 0 0011 16.8a7.802 7.802 0 007.201-4.798z" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,800;1,700;1,800&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css');
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="floating-element float-1"></div>
-        <div class="floating-element float-2"></div>
-        
-        <div class="hero-content">
-            <h1>Master Mathematics & Sciences</h1>
-            <p class="hero-tagline">Wear the Crown of Wisdom</p>
-            <p class="hero-description">Join Bukhosi Learning Hub and unlock your academic potential with expert tutoring for Grades 8-12</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="cta-button cta-primary">Start Learning Today</a>
-                <a href="#subjects" class="cta-button cta-secondary">Explore Subjects</a>
-            </div>
-        </div>
-    </section>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#F5F0E8;
+  --cream-dark:#EDE8DF;
+  --gold:#B8892A;
+  --gold-mid:#C9A84C;
+  --gold-pale:#FBF4E8;
+  --ink:#1A1614;
+  --muted:#5A5450;
+  --faint:#9A9390;
+  --border:#DDD8CE;
+  --white:#FFFFFF;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px;overflow-x:hidden}
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-box">
-                <div class="stat-number">8-12</div>
-                <div class="stat-label">Grade Levels</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">4+</div>
-                <div class="stat-label">Subjects Offered</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">R300</div>
-                <div class="stat-label">Per Month</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Learning Support</div>
-            </div>
-        </div>
-    </section>
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-img{height:44px;width:auto;display:block}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-text-top{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;color:var(--ink);letter-spacing:0.04em;text-transform:uppercase}
+.logo-text-bottom{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:500;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:0.85rem;font-weight:400;color:var(--muted);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:0.75rem}
+.nav-ghost{background:transparent;border:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;color:var(--ink);cursor:pointer;padding:0.45rem 0.9rem}
+.nav-cta{background:var(--gold);color:var(--white);border:none;padding:0.5rem 1.25rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;transition:opacity 0.15s}
+.nav-cta:hover{opacity:0.88}
 
-    <!-- About Section -->
-    <section id="about" class="content-section section-dark">
-        <div class="content-wrapper">
-            <h2 class="section-title">Why Choose Bukhosi?</h2>
-            <p class="section-subtitle">We're committed to transforming education through personalized learning experiences</p>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Excellence in Every Lesson</h3>
-                    <p>At Bukhosi Learning Hub, we believe that every student has the potential to excel. Our innovative teaching methods and dedicated tutors create an environment where learning becomes an exciting journey.</p>
-                    <p>Whether you prefer online flexibility or in-person interaction, we adapt to your learning style and schedule.</p>
-                </div>
-                <div>
-                    <div class="mission">
-    <h3>Our Mission</h3>
-    <p>Empowering your Child to achieve academic excellence through innovative teaching</p>
+/* ANNOUNCE */
+.announce{background:var(--gold);padding:0.6rem 5%;display:flex;align-items:center;justify-content:center;gap:0.75rem}
+.announce span{font-size:0.82rem;color:var(--white);font-weight:400}
+.announce strong{font-weight:600}
+.announce a{font-size:0.82rem;color:var(--white);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+
+/* HERO */
+.hero{padding:3rem 5% 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;background:var(--cream)}
+.hero-l{padding-left: 2rem;}
+.hero-l h1{font-family:'Fraunces',serif;font-size:clamp(2.8rem,5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.5rem}
+.hero-l p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.85;max-width:440px;margin-bottom:2.25rem}
+.hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-dark{background:var(--gold);color:var(--white);border:none;padding:0.85rem 1.8rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;transition:opacity 0.15s}
+.btn-dark:hover{opacity:0.88}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border);padding:0.85rem 1.8rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:500;cursor:pointer;transition:all 0.15s}
+.btn-outline:hover{border-color:var(--ink)}
+.btn-gold{background:var(--gold);color:var(--white);border:none;padding:0.85rem 1.8rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;transition:opacity 0.15s}
+.btn-gold:hover{opacity:0.9}
+.hero-r{display:flex;align-items:center;justify-content:center}
+.hero-img-wrap{width:100%;aspect-ratio:16/13.5;border-radius:16px;overflow:hidden;background:var(--cream-dark);border:1px solid var(--border)}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* QUOTE BAR */
+.quote-bar{background:var(--white);padding:3rem 5%;text-align:center;border-bottom:1px solid var(--border)}
+.quote-bar blockquote{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;color:var(--ink);max-width:700px;margin:0 auto 0.75rem;line-height:1.5;font-style:italic}
+.quote-bar cite{font-size:0.82rem;color:var(--muted);font-style:normal;font-weight:500}
+
+/* SUBJECTS */
+.subjects-sec{padding:5rem 5%;background:var(--cream)}
+.subjects-sec h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);text-align:center;margin-bottom:0.75rem;letter-spacing:-0.02em}
+.subjects-sec .sub-p{text-align:center;color:var(--muted);font-weight:300;font-size:0.95rem;margin-bottom:2.5rem}
+.subject-tags{display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center}
+.stag{background:var(--white);border:1.5px solid var(--border);color:var(--ink);padding:0.65rem 1.5rem;border-radius:8px;font-size:0.9rem;font-weight:500;cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif}
+.stag:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-pale)}
+
+/* ALT SECTIONS */
+.alt-sec{padding:5rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.alt-sec.white{background:var(--white)}
+.alt-sec.cream{background:var(--cream)}
+.alt-sec.flip{direction:rtl}
+.alt-sec.flip>*{direction:ltr}
+.alt-img{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:var(--cream-dark);border:1px solid var(--border)}
+.alt-img img{width:100%;height:100%;object-fit:cover;display:block}
+.alt-copy h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--ink);line-height:1.12;letter-spacing:-0.02em;margin-bottom:1.25rem}
+.alt-copy p{font-size:0.95rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1rem}
+.alt-copy p:last-of-type{margin-bottom:2rem}
+
+/* VIDEO INTRO */
+.video-intro{position:relative;width:100%;min-height:680px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.video-intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.video-intro-overlay{position:absolute;inset:0;background:rgba(26,22,20,0.55);z-index:1}
+.video-intro-content{position:relative;z-index:2;padding:5rem 5%}
+.video-intro-content h2{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:var(--white);letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.1}
+.video-intro-content p{font-size:1rem;color:rgba(255,255,255,0.75);font-weight:300;max-width:520px;margin:0 auto;line-height:1.85}
+.steps-sec{padding:5rem 5%;background:var(--cream)}
+.steps-sec h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);text-align:center;letter-spacing:-0.02em;margin-bottom:3rem}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.step-card{background:var(--cream-dark);border-radius:16px;overflow:hidden}
+.step-visual{height:220px;overflow:hidden;background:var(--cream-dark)}
+.step-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.step-body{padding:1.75rem}
+.step-body h3{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem}
+.step-body p{font-size:0.85rem;color:var(--muted);font-weight:300;line-height:1.8}
+
+/* TUTORS SECTION */
+.tutors-band{background:var(--white)}
+.tutors-fullwidth{width:100%;aspect-ratio:21/7;overflow:hidden;background:var(--cream-dark);display:block;position:relative}
+.tutors-fullwidth img{width:100%;height:100%;object-fit:cover;display:block}
+.tutors-fullwidth-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:absolute;inset:0}
+.tutors-fullwidth-placeholder i{font-size:3rem;color:var(--faint)}
+.tutors-fullwidth-placeholder span{font-size:0.85rem;color:var(--faint);letter-spacing:0.04em}
+.tutors-inner{padding:4rem 5%}
+.tutors-inner h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);letter-spacing:-0.02em;margin-bottom:0.5rem}
+.tutors-inner p.sub{font-size:0.95rem;color:var(--muted);font-weight:300;margin-bottom:3rem}
+.tutors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+
+/* TUTOR CARD — MyTutor style */
+.tutor-card{background:var(--cream);border-radius:12px;overflow:hidden}
+.tutor-card-photo{height:240px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.tutor-backdrop{position:absolute;width:160px;height:160px;border-radius:50%;top:20px;left:50%;transform:translateX(-50%)}
+.tutor-backdrop.gold{background:var(--gold-pale)}
+.tutor-backdrop.green{background:#E4F2E1}
+.tutor-backdrop.blue{background:#E1EDF5}
+.tutor-card-photo img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:88%;width:auto;object-fit:cover;border-radius:6px 6px 0 0}
+.tutor-card-photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1rem;gap:4px}
+.tutor-card-photo-placeholder i{font-size:2rem;color:var(--faint)}
+.tutor-card-photo-placeholder span{font-size:0.72rem;color:var(--faint)}
+.tutor-card-body{padding:1.5rem;text-align:center}
+.tutor-name{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:2px}
+.tutor-subject{font-size:0.78rem;color:var(--muted);margin-bottom:1rem}
+.tutor-review{font-size:0.83rem;color:var(--muted);font-weight:300;line-height:1.8;font-style:italic;margin-bottom:0.75rem}
+.tutor-reviewer{font-size:0.75rem;color:var(--faint);font-weight:400}
+
+/* TRUST */
+.trust-sec{padding:5rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;background:var(--cream)}
+.trust-copy h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--ink);line-height:1.12;letter-spacing:-0.02em;margin-bottom:1.25rem}
+.trust-copy p{font-size:0.95rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1rem}
+.trust-copy p:last-of-type{margin-bottom:0}
+.trust-img{border-radius:12px;overflow:hidden;aspect-ratio:1;background:var(--cream-dark);border:1px solid var(--border)}
+.trust-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* CAMP */
+.camp-sec{padding:5rem 5%;background:var(--white)}
+.camp-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.camp-copy h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--ink);line-height:1.12;letter-spacing:-0.02em;margin-bottom:1.25rem}
+.camp-copy p{font-size:0.95rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1rem}
+.camp-copy p:last-of-type{margin-bottom:2rem}
+.camp-card{background:var(--gold-pale);border:1px solid rgba(184,137,42,0.2);border-radius:16px;padding:2.5rem}
+.camp-card-tag{display:inline-block;background:var(--gold);color:var(--white);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:1.5rem}
+.camp-price{font-family:'Fraunces',serif;font-size:3rem;font-weight:800;color:var(--ink);line-height:1;margin-bottom:4px}
+.camp-price-sub{font-size:0.78rem;color:var(--muted);margin-bottom:2rem;display:block;font-weight:300}
+.camp-details{display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem}
+.cd{display:flex;align-items:center;gap:8px;font-size:0.85rem}
+.cd i{font-size:15px;color:var(--gold);flex-shrink:0}
+.cd span{color:var(--muted);font-weight:300}
+.cd strong{color:var(--ink);font-weight:500}
+.camp-deadline{display:flex;align-items:center;gap:5px;font-size:0.75rem;color:var(--gold);font-weight:600;margin-top:0.75rem}
+.camp-deadline i{font-size:13px}
+
+/* FEES */
+.fees-sec{padding:5rem 5%;background:var(--cream)}
+.fees-sec h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);letter-spacing:-0.02em;margin-bottom:0.75rem}
+.fees-sec .sub-p{color:var(--muted);font-weight:300;font-size:0.95rem;margin-bottom:2.75rem;max-width:500px}
+.fees-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.fc-card{background:var(--white);border-radius:14px;padding:2.25rem;border:2px solid var(--gold)}
+.fc-tier{font-size:0.68rem;font-weight:600;color:var(--faint);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;display:block}
+.fc-price{font-family:'Fraunces',serif;font-size:4rem;font-weight:800;color:var(--ink);line-height:1}
+.fc-price-sub{font-size:0.78rem;color:var(--faint);margin:0.3rem 0 0;display:block}
+.fc-sep{height:1px;background:var(--border);margin:1.4rem 0}
+.fc-dot-row{display:flex;align-items:flex-start;gap:9px;font-size:0.87rem;color:var(--muted);font-weight:300;margin-bottom:0.65rem;line-height:1.5}
+.fc-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.45rem}
+.fc-btn{background:var(--gold);color:var(--white);border:none;padding:0.78rem 1.5rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;width:100%;margin-top:1.4rem;transition:opacity 0.15s}
+.fc-btn:hover{opacity:0.9}
+.fees-right p{font-size:0.95rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1.75rem}
+.subject-list{display:flex;flex-direction:column}
+.subject-row{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--ink);font-weight:400}
+.subject-row:first-child{border-top:1px solid var(--border)}
+.subject-grade{font-size:0.75rem;color:var(--faint);font-weight:300}
+.reg-note{margin-top:2.5rem;padding:1.1rem 1.4rem;background:var(--white);border-radius:10px;display:flex;align-items:flex-start;gap:9px;border:1px solid var(--border)}
+.reg-note i{font-size:15px;color:var(--gold);flex-shrink:0;margin-top:2px}
+.reg-note p{font-size:0.83rem;color:var(--muted);font-weight:300;line-height:1.75}
+.reg-note p strong{color:var(--ink);font-weight:600}
+
+/* CTA */
+.cta-sec{padding:5rem 5%;background:var(--gold-pale);border-top:1px solid rgba(184,137,42,0.2);text-align:center}
+.cta-sec h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);letter-spacing:-0.02em;margin-bottom:1rem}
+.cta-sec p{font-size:1rem;color:var(--muted);font-weight:300;max-width:480px;margin:0 auto 2.5rem;line-height:1.85}
+.cta-btns{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--ink);padding:4rem 5% 2rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:2rem}
+.fbrand-name{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.75rem;display:block}
+.fbrand p{font-size:0.82rem;color:rgba(255,255,255,0.35);font-weight:300;line-height:1.85;max-width:220px}
+.fcol h4{font-size:0.67rem;font-weight:600;color:rgba(255,255,255,0.28);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem}
+.fcol a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:0.5rem;font-weight:300;transition:color 0.15s}
+.fcol a:hover{color:var(--white)}
+.fci{display:flex;align-items:flex-start;gap:7px;font-size:0.82rem;color:rgba(255,255,255,0.45);font-weight:300;margin-bottom:0.6rem}
+.fci i{font-size:14px;color:var(--gold-mid);flex-shrink:0;margin-top:2px}
+.footer-btm{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:0.72rem;color:rgba(255,255,255,0.2)}
+.fsoc{display:flex;gap:0.6rem}
+.fsoc a{width:32px;height:32px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);text-decoration:none;transition:all 0.15s}
+.fsoc a:hover{border-color:var(--gold-mid);color:var(--gold-mid)}
+.fsoc a i{font-size:15px}
+</style>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <img src="icon.png" alt="Bukhosi Learning Hub logo" class="logo-img">
+    <div class="logo-text">
+      <span class="logo-text-top">Bukhosi</span>
+      <span class="logo-text-bottom">Learning Hub</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#">How it works</a>
+    <a href="#">Subjects</a>
+    <a href="#">Our tutors</a>
+    <a href="#">Fees</a>
+    <!--<a href="#">Camp</a>-->
+    <a href="#">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="nav-ghost">WhatsApp us</button>
+    <button class="nav-cta">Join Bukhosi</button>
+  </div>
+</nav>
+
+<!--Announcements go here
+<div class="announce">
+  <span><strong>Bukhosi Academic Camp — July 2025.</strong> Only 30 spots available. Deadline: 20 June.</span>
+  <a href="#">Reserve your place →</a>
+</div> -->
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-l">
+    <h1>Wear the crown of wisdom.</h1>
+    <p>We can't do the work for them. But we can make sure that when they sit down to study, that they actually understand what they're doing and that when exams come, they're ready.</p>
+    <div class="hero-btns">
+      <button class="btn-dark">Join Bukhosi</button>
+      <button class="btn-outline">How it works</button>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hero-img-wrap">
+      <img src="20260426_125550.jpg" alt="kids at bukhosi studying">
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-bar">
+  <blockquote>"Here i want to put a comment from a parent saying something positive about bukhosi so get them testimonials"</blockquote>
+  <cite>parent's name here and kid's grade?!</cite>
 </div>
-                </div>
-            </div>
+
+<!-- SUBJECTS -->
+<section class="subjects-sec">
+  <h2>Pick a subject to get started</h2>
+  <p class="sub-p">We focus on the subjects that matter most for matric.</p>
+  <div class="subject-tags">
+    <button class="stag">Mathematics</button>
+    <button class="stag">Math Lit</button>
+    <button class="stag">Physical Sciences</button>
+    <button class="stag">Life Sciences</button>
+    <button class="stag">Technical Sciences</button>
+    <button class="stag">Technical Maths</button>
+    <button class="stag">Accounting</button>
+  </div>
+</section>
+
+<!-- ALT 1: About -->
+<section class="alt-sec white">
+  <div class="alt-img">
+    <img src="brand-image-for-feature-1.svg" alt="kids in a tutoring session">
+  </div>
+  <div class="alt-copy">
+    <h2>More than just getting through the work.</h2>
+    <p>Bukhosi Learning Hub is built for Grade 8 to 12 learners who are serious about improving their results. Not just passing but actually understanding what they're doing and what they're doing it for.</p>
+    <p>We work in small groups and individual sessionsso every learner gets the attention they need. Our tutors don't just cover content. They close the missing basics gaps and make sure learners can walk into any exam ready not just hoping the paper will be easy so they pass.</p>
+    <!--<button class="btn-dark">Meet our tutors</button>-->
+  </div>
+</section>
+
+<!-- ALT 2: Tutors quality -->
+<section class="alt-sec cream flip">
+  <div class="alt-img">
+    <img src="brand-image-for-feature-4.svg" alt="A picture of one of the tutors tutoring maybe one-one or a class?">
+  </div>
+  <div class="alt-copy">
+    <h2>Tutors who actually know their subjects.</h2>
+    <p>Every tutor at Bukhosi is chosen carefully, not just for what they know, but for how they explain it. At Bukhosi tutors are patient and genuinely invested in whether the learner gets it or not.</p>
+    <p>Small groups mean your child is never lost at the back of a classroom. If they don't understand something, we find another way to explain it until they do.</p>
+    <button class="btn-outline">gonna put a learn more button here for later use</button>
+  </div>
+</section>
+
+
+<!--MEET OUR TUTORS-->
+<section class="tutors-band">
+  
+  <div class="tutors-fullwidth" style="aspect-ratio:21/7;position:relative;overflow:hidden;background:var(--cream-dark)">
+    <img src="welcometutoren_2024.jpg" alt="bukhosi group tutor photo goes here" style="width:100%;height:100%;object-fit:cover;display:block">
+    <div class="tutors-fullwidth-placeholder">
+      <!--<i class="ti ti-camera" aria-hidden="true"></i>
+      <span>Group photo of Bukhosi tutors — full width</span>-->
+    </div>
+  </div>
+  <div class="tutors-inner">
+    <h2>Meet our tutors</h2>
+    <p class="sub">Here's what learners and parents say about working with them.</p>
+    <div class="tutors-grid">
+
+      <!-- Tutor card 1 -->
+      <div class="tutor-card">
+        <div class="tutor-card-photo">
+          <div class="tutor-backdrop gold"></div>
+          <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait picture goes here">
+          <!--<div class="tutor-card-photo-placeholder">
+            <i class="ti ti-user" aria-hidden="true"></i>
+            <span>Tutor photo</span>
+          </div>-->
         </div>
-    </section>
-
-    <!-- Subjects Section -->
-    <section id="subjects" class="content-section section-light">
-        <div class="content-wrapper">
-            <h2 class="section-title">Our Subjects</h2>
-            <p class="section-subtitle">Comprehensive coverage of key STEM subjects for academic success</p>
-            
-            <div class="services-grid">
-                <a href="tutorials.html" class="service-card">
-                    <div class="service-icon">📐</div>
-                    <h3>Mathematics</h3>
-                    <p><strong>Grades 8-12</strong></p>
-                    <p>From basic algebra to advanced calculus, we make math concepts clear and applicable</p>
-                </a>
-                <a href="tutorials.html" class="service-card">
-                    <div class="service-icon">🔬</div>
-                    <h3>Physical Science</h3>
-                    <p><strong>Grades 10-12</strong></p>
-                    <p>Master physics and chemistry with hands-on experiments and real-world applications</p>
-                </a>
-                <a href="tutorials.html" class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Technical Science</h3>
-                    <p><strong>Grades 10-12</strong></p>
-                    <p>Bridge theory and practice with applied science for technical careers</p>
-                </a>
-                <a href="tutorials.html" class="service-card">
-                    <div class="service-icon">🧮</div>
-                    <h3>Technical Mathematics</h3>
-                    <p><strong>Grades 10-12</strong></p>
-                    <p>Practical mathematics designed for technical and vocational excellence</p>
-                </a>
-            </div>
+        <div class="tutor-card-body">
+          <div class="tutor-name">Nkosi Z.C.</div>
+          <div class="tutor-subject">Mathematics, Science tutor</div>
+          <p class="tutor-review">"A testimonial from a parent about their experience with this tutor will go hereererer."</p>
+          <div class="tutor-reviewer">Parent name or child</div>
         </div>
-    </section>
+      </div>
 
-    <!-- Services Section -->
-    <section class="content-section section-dark">
-        <div class="content-wrapper">
-            <h2 class="section-title">How We Help Your Child Succeed</h2>
-            <p class="section-subtitle">Tailored learning solutions for every student's journey</p>
-            
-            <div class="services-grid">
-                <a href="tutorials.html" class="service-card">
-                    <div class="service-icon">👤</div>
-                    <h3>One-on-One Tutoring</h3>
-                    <p>Get undivided attention with personalized sessions that target a child's specific learning needs</p>
-                </a>
-                <a href="tutorials.html" class="service-card">
-                    <div class="service-icon">👥</div>
-                    <h3>Group Classes</h3>
-                    <p>Learn collaboratively in small groups where ideas flow and understanding deepens</p>
-                </a>
-                <a href="tutorials.html" class="service-card">
-                    <div class="service-icon">📝</div>
-                    <h3>Exam Preparation</h3>
-                    <p>Intensive tutor sessions designed to boost and maximize exam performance</p>
-                </a>
-                <a href="tutorials.html" class="service-card">
-                    <div class="service-icon">📚</div>
-                    <h3>Homework Assistance</h3>
-                    <p>Never struggle alone. Get expert help with homeworks and projects</p>
-                </a>
-            </div>
+      <!-- Tutor card 2 -->
+      <div class="tutor-card">
+        <div class="tutor-card-photo">
+          <div class="tutor-backdrop green"></div>
+          <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait picture goes here">
+          <!--<div class="tutor-card-photo-placeholder">
+            <i class="ti ti-user" aria-hidden="true"></i>
+            <span>Tutor photo</span>
+          </div>-->
         </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="content-section section-light">
-        <div class="content-wrapper">
-            <h2 class="section-title">Simple, Affordable Pricing</h2>
-            <p class="section-subtitle">Quality education that doesn't break the bank</p>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--mustard);">Essential Plan</h3>
-                    <div class="price-tag" style="font-size: 3rem;">R200 <span style="font-size: 1rem;">/month per subject</span></div>
-                    <p style="font-size: 1rem; color: var(--gray); margin: 1rem 0;">Online Classes Only</p>
-                    <ul style="list-style: none; text-align: left; display: inline-block; margin: 1rem 0; font-size: 0.9rem;">
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ Online tutoring sessions</li>
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ Flexible scheduling</li>
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ Expert tutor</li>
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ Digital study materials</li>
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ Email support</li>
-                    </ul>
-                    <br>
-                    <a href="#contact" class="cta-button cta-secondary">Get Started</a>
-                </div>
-
-                <div class="pricing-card premium-card">
-                    <div class="popular-badge">Most Popular</div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--mustard);">Premium Plan</h3>
-                    <div class="price-tag" style="font-size: 3rem;">R300 <span style="font-size: 1rem;">/month per subject</span></div>
-                    <p style="font-size: 1rem; color: var(--gray); margin: 1rem 0;">Online and Physical Classes Available</p>
-                    <ul style="list-style: none; text-align: left; display: inline-block; margin: 1rem 0; font-size: 0.9rem;">
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ Flexible scheduling</li>
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ Expert tutor</li>
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ Study materials provided</li>
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ 24/7 support</li>
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ Priority booking</li>
-                        <li style="padding: 0.3rem 0; color: var(--gray);">✓ Exam preparation</li>
-                    </ul>
-                    <br>
-                    <a href="#contact" class="cta-button cta-primary">Get Started Now</a>
-                </div>
-            </div>
+        <div class="tutor-card-body">
+          <div class="tutor-name">Other tutor name</div>
+          <div class="tutor-subject">Physical Sciences tutor</div>
+          <p class="tutor-review">"A learner or parent comment about this tutor or bukhosi hereeree"</p>
+          <div class="tutor-reviewer">Name of commenter goes here</div>
         </div>
-    </section>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="content-section section-dark">
-        <div class="content-wrapper">
-            <h2 class="section-title">Ready to Start Learning?</h2>
-            <p class="section-subtitle">Get in touch and begin your journey to academic excellence</p>
-            
-            <div class="contact-container">
-                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--mustard);">Contact Us Today</h3>
-                <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 3rem;">Choose your preferred way to connect with us</p>
-                
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <h3>📞 Call Us</h3>
-                        <a href="tel:0823125720">082 312 5720</a>
-                    </div>
-                    <div class="contact-item">
-                        <h3>📧 Email Us</h3>
-                        <a href="mailto:bukhosilearninghub@gmail.com">bukhosilearninghub@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <h3>📍 Visit Us</h3>
-                        <p style="color: var(--gray);">Port Elizabeth, Eastern Cape</p>
-                    </div>
-                </div>
-                
-                <a href="https://wa.me/27823125720?text=Hi%2C%20I'm%20interested%20in%20tutoring%20sessions%20at%20Bukhosi%20Learning%20Hub" class="whatsapp-button" target="_blank">
-                    💬 Chat on WhatsApp
-                </a>
-            </div>
+      <!-- Tutor card 3 -->
+      <div class="tutor-card">
+        <div class="tutor-card-photo">
+          <div class="tutor-backdrop blue"></div>
+          <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait picture goes here">
+          <!--<div class="tutor-card-photo-placeholder">
+            <i class="ti ti-user" aria-hidden="true"></i>
+            <span>Tutor photo</span>
+          </div>-->
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div style="font-size: 1.5rem; font-weight: 800; background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem;">
-            BUKHOSI LEARNING HUB
+        <div class="tutor-card-body">
+          <div class="tutor-name">Othere other tutor name here</div>
+          <div class="tutor-subject">Life Sciences tutor</div>
+          <p class="tutor-review">"Comment comment comment comment hereererererererer"</p>
+          <div class="tutor-reviewer">name of commenter goes here</div>
         </div>
-        <p style="margin: 1rem 0;">Wear the Crown of Wisdom</p>
-        <p>&copy; <span id="year"></span> Bukhosi Learning Hub. All rights reserved.</p>
-    </footer>
+      </div>
 
-    <script src="scripts/main.js"></script>
-</body>
-</html>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST ALT -->
+<section class="trust-sec">
+  <div class="trust-copy">
+    <h2>Trusted by families across Port Elizabeth.</h2>
+    <p>Most of our learners find us through word of mouth and that tells you everything. Parents recommend us because of our reputable standards.</p>
+    <p>We work with serious learners. That means we're honest if a learner isn't putting in the effort between sessions, we'll tell you. Our job is results, and that only happens with commitment on both sides.</p>
+  </div>
+  <div class="trust-img">
+    <img src="brand-image-for-feature-2.svg" alt="Bukhosi learners in a group session">
+  </div>
+</section>
+
+<!-- VIDEO INTRO + STEPS -->
+<div class="video-intro">
+  <video autoplay muted loop playsinline poster="empty_bigger.png">
+    <source src="classroom-video.mov" type="video/mp4">
+    <source src="how-it-works.mov" type="video/quicktime">
+  </video>
+  <div class="video-intro-overlay"></div>
+  <div class="video-intro-content">
+    <h2>Bukhosi one on one classes</h2>
+    <p>At Bukhosi we deliver the most engaging online tutoring experience for your child.</p>
+  </div>
+</div>
+
+<section class="steps-sec" style="padding-top:3.5rem">
+  <h2 style="display:none">Start learning in 3 steps</h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-visual">
+        <img src="busy-parent-2020.png" alt="Register and choose subjects at Bukhosi Learning Hub">
+      </div>
+      <div class="step-body">
+        <h3>Register and choose your subjects</h3>
+        <p>Get in touch, tell us what grade your child is in and which subjects they need. That's all we need from you</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-visual">
+        <img src="tutorial-branded-2021.png" alt="Attend tutoring sessions at Bukhosi">
+      </div>
+      <div class="step-body">
+        <h3>Attend sessions</h3>
+        <p>Your child starts attending our sessions through the week</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-visual">
+        <img src="LS pink semi circle 1.png.webp" alt="Watch results improve with Bukhosi tutoring">
+      </div>
+      <div class="step-body">
+        <h3>Watch the results improve</h3>
+        <p>Progress is tracked from the start. Parents are kept updated.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="fees-sec">
+  <h2>Honest fees. No hidden costs.</h2>
+  <p class="sub-p">Simple pricing. You know exactly what you're paying and what your child gets for it.</p>
+
+  <div class="fees-layout">
+    <div class="fc-card">
+      <span class="fc-tier">Per subject / per month</span>
+      <div class="fc-price">R400</div>
+      <span class="fc-price-sub">Two sessions per week</span>
+      <div class="fc-sep"></div>
+      <div class="fc-dot-row"><span class="fc-dot"></span><span>Individual sessions</span></div>
+      <div class="fc-dot-row"><span class="fc-dot"></span><span>Small group classes with a dedicated tutor</span></div>
+      <div class="fc-dot-row"><span class="fc-dot"></span><span>Ongoing support between sessions</span></div>
+      <div class="fc-dot-row"><span class="fc-dot"></span><span>Progress tracked and parents kept updated</span></div>
+      <button class="fc-btn">Get started</button>
+    </div>
+
+    <div class="fees-right">
+      <p>You can pick as many subjects as you need. Pick what your child needs and pay for exactly that.</p>
+      <div class="subject-list">
+        <div class="subject-row"><span>Mathematics</span><span class="subject-grade">Gr 8–12</span></div>
+        <div class="subject-row"><span>Mathematics Literacy</span><span class="subject-grade">Gr 10–12</span></div>
+        <div class="subject-row"><span>Physical Sciences</span><span class="subject-grade">Gr 10–12</span></div>
+        <div class="subject-row"><span>Life Sciences</span><span class="subject-grade">Gr 10–12</span></div>
+        <div class="subject-row"><span>Technical Sciences</span><span class="subject-grade">Gr 10–12</span></div>
+        <div class="subject-row"><span>Technical Maths</span><span class="subject-grade">Gr 10–12</span></div>
+        <div class="subject-row"><span>Accounting</span><span class="subject-grade">Gr 10–12</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reg-note">
+    <i class="ti ti-info-circle" aria-hidden="true"></i>
+    <p>There is a once-off <strong>registration fee of R200</strong> when your child first joins. You won't be charged again after that.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <h2>Your child's results start here.</h2>
+  <p>Whatever grade they're in, whatever level they're on right now, there's always room for improvement. Get in touch today and we'll take it from there.</p>
+  <div class="cta-btns">
+    <button class="btn-dark">Join Bukhosi today</button>
+    <button class="btn-outline">WhatsApp us</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!--<footer>
+  <div class="footer-top">
+    <div class="fbrand">
+      <span class="fbrand-name">Bukhosi Learning Hub</span>
+      <p>Empowering learners. Building leaders. Creating a legacy of excellence in Port Elizabeth.</p>
+    </div>
+    <div class="fcol">
+      <h4>Links</h4>
+      <a href="#">Home</a>
+      <a href="#">How it works</a>
+      <a href="#">Subjects</a>
+      <a href="#">Our tutors</a>
+      <a href="#">Camp</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="fcol">
+      <h4>Subjects</h4>
+      <a href="#">Mathematics</a>
+      <a href="#">Mathematics Lit</a>
+      <a href="#">Physical Sciences</a>
+      <a href="#">Life Sciences</a>
+      <a href="#">Technical Sciences</a>
+      <a href="#">Technical Maths</a>
+      <a href="#">Accounting</a>
+    </div>
+    <div class="fcol">
+      <h4>Contact</h4>
+      <div class="fci"><i class="ti ti-phone" aria-hidden="true"></i>+27 82 312 5720</div>
+      <div class="fci"><i class="ti ti-mail" aria-hidden="true"></i>bukhosilearninghub@gmail.com</div>
+      <div class="fci"><i class="ti ti-map-pin" aria-hidden="true"></i>Port Elizabeth, South Africa</div>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <span class="footer-copy">© 2025 Bukhosi Learning Hub. All rights reserved.</span>
+    <div class="fsoc">
+      <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</footer>-->
+</body></html>
