@@ -77,6 +77,12 @@ nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;d
 .subject-tags{display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center}
 .stag{background:var(--white);border:1.5px solid var(--border);color:var(--ink);padding:0.65rem 1.5rem;border-radius:8px;font-size:0.9rem;font-weight:500;cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif}
 .stag:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-pale)}
+.stag.active{border-color:var(--gold);color:var(--white);background:var(--gold)}
+.subject-enrol-wrap{margin-top:1.5rem;display:flex;flex-direction:column;align-items:center;gap:0.5rem}
+.subject-enrol-btn{padding:0.8rem 2.5rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:600;border:none;transition:all 0.2s;letter-spacing:0.02em;background:var(--border);color:var(--faint);cursor:not-allowed}
+.subject-enrol-btn.enabled{background:var(--gold);color:var(--white);cursor:pointer}
+.subject-enrol-btn.enabled:hover{opacity:0.9}
+.subject-enrol-hint{font-size:0.78rem;color:var(--faint);font-weight:300}
 
 /* ALT SECTIONS */
 .alt-sec{padding:5rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
@@ -109,6 +115,8 @@ nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;d
 
 /* TUTORS SECTION */
 .tutors-band{background:var(--white)}
+.tutors-heading{padding:3.5rem 5% 2rem}
+.tutors-heading h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);letter-spacing:-0.02em}
 .tutors-fullwidth{width:100%;aspect-ratio:21/7;overflow:hidden;background:var(--cream-dark);display:block;position:relative}
 .tutors-fullwidth img{width:100%;height:100%;object-fit:cover;display:block}
 .tutors-fullwidth-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:absolute;inset:0}
@@ -117,16 +125,82 @@ nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;d
 .tutors-inner{padding:4rem 5%}
 .tutors-inner h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);letter-spacing:-0.02em;margin-bottom:0.5rem}
 .tutors-inner p.sub{font-size:0.95rem;color:var(--muted);font-weight:300;margin-bottom:3rem}
-.tutors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 
-/* TUTOR CARD — MyTutor style */
-.tutor-card{background:var(--cream);border-radius:12px;overflow:hidden}
-.tutor-card-photo{height:240px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
-.tutor-backdrop{position:absolute;width:160px;height:160px;border-radius:50%;top:20px;left:50%;transform:translateX(-50%)}
-.tutor-backdrop.gold{background:var(--gold-pale)}
-.tutor-backdrop.green{background:#E4F2E1}
-.tutor-backdrop.blue{background:#E1EDF5}
-.tutor-card-photo img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:88%;width:auto;object-fit:cover;border-radius:6px 6px 0 0}
+/* TUTORS CAROUSEL */
+.tutors-grid{position:relative}
+.tutors-scroll-wrap{overflow:hidden;margin:0 56px}
+.tutors-track{display:flex;gap:1.25rem;transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);}
+.tutors-controls{display:none}
+.tutors-scroll-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--border);background:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.15s;flex-shrink:0;position:absolute;top:50%;transform:translateY(-50%);z-index:10}
+.tutors-scroll-btn:hover{border-color:var(--gold);color:var(--gold)}
+.tutors-scroll-btn:disabled{opacity:0.25;cursor:not-allowed}
+.tutors-scroll-btn i{font-size:16px}
+#tutorPrev{left:0}
+#tutorNext{right:0}
+.tutors-dots{display:flex;gap:6px;justify-content:center;margin-top:1.75rem}
+.tutors-dot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:all 0.2s;border:none;padding:0;cursor:pointer}
+.tutors-dot.active{background:var(--gold);width:18px;border-radius:3px}
+
+.tutor-card{background:var(--cream);border-radius:12px;overflow:hidden;flex:0 0 calc(33.333% - 0.84rem);min-width:0}
+.tutor-card-photo{height:300px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+
+/* shape 1 — circle (gold) */
+.tutor-backdrop.shape-circle{
+  position:absolute;width:90%;height:88%;
+  border-radius:50%;
+  background:var(--gold-pale);
+  bottom:-10%;left:50%;transform:translateX(-50%);
+}
+/* shape 2 — tilted parallelogram (green) */
+.tutor-backdrop.shape-para{
+  position:absolute;width:90%;height:82%;
+  background:#E4F2E1;border-radius:10px;
+  transform:translateX(-50%) rotate(-12deg);
+  bottom:-14%;left:50%;
+}
+/* shape 3 — triangle (blue) */
+.tutor-backdrop.shape-tri{
+  position:absolute;width:90%;height:85%;
+  background:#E1EDF5;
+  clip-path:polygon(50% 0%,100% 100%,0% 100%);
+  bottom:0;left:50%;transform:translateX(-50%);
+}
+/* shape 4 — diamond (pink) */
+.tutor-backdrop.shape-diamond{
+  position:absolute;width:70%;height:80%;
+  background:#F5E6F0;
+  clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);
+  bottom:-5%;left:50%;transform:translateX(-50%);
+}
+/* shape 5 — right-leaning parallelogram (teal) */
+.tutor-backdrop.shape-para-r{
+  position:absolute;width:90%;height:82%;
+  background:#E0F0EE;border-radius:10px;
+  transform:translateX(-50%) rotate(10deg);
+  bottom:-14%;left:50%;
+}
+/* shape 6 — wide arc / pill (lavender) */
+.tutor-backdrop.shape-pill{
+  position:absolute;width:90%;height:70%;
+  background:#EDE8F5;
+  border-radius:50% 50% 0 0;
+  bottom:0;left:50%;transform:translateX(-50%);
+}
+/* shape 7 — pentagon (peach) */
+.tutor-backdrop.shape-penta{
+  position:absolute;width:90%;height:85%;
+  background:#F5EDE0;
+  clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);
+  bottom:-5%;left:50%;transform:translateX(-50%);
+}
+
+.tutor-card-photo img{
+  position:absolute;bottom:0;
+  left:50%;transform:translateX(-50%);
+  height:92%;width:69%;
+  object-fit:cover;object-position:top;
+  border-radius:8px 8px 0 0;
+}
 .tutor-card-photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:1rem;gap:4px}
 .tutor-card-photo-placeholder i{font-size:2rem;color:var(--faint)}
 .tutor-card-photo-placeholder span{font-size:0.72rem;color:var(--faint)}
@@ -176,6 +250,10 @@ nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 5%;d
 .fc-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.45rem}
 .fc-btn{background:var(--gold);color:var(--white);border:none;padding:0.78rem 1.5rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;width:100%;margin-top:1.4rem;transition:opacity 0.15s}
 .fc-btn:hover{opacity:0.9}
+.fc-reg-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.25rem}
+.fc-reg-label{font-size:0.85rem;color:var(--muted);font-weight:400}
+.fc-reg-price{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:800;color:var(--ink)}
+.fc-reg-note{font-size:0.75rem;color:var(--faint);font-weight:300;display:block;margin-bottom:0}
 .fees-right p{font-size:0.95rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1.75rem}
 .subject-list{display:flex;flex-direction:column}
 .subject-row{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--ink);font-weight:400}
@@ -220,16 +298,20 @@ footer{background:var(--ink);padding:4rem 5% 2rem}
     </div>
   </a>
   <div class="nav-links">
-    <a href="#">How it works</a>
-    <a href="#">Subjects</a>
-    <a href="#">Our tutors</a>
-    <a href="#">Fees</a>
+    <a href="#steps-sec-id">How it works</a>
+    <a href="#subjects-sec-id">Subjects</a>
+    <a href="#tutors-sec-id">Our tutors</a>
+    <a href="#pricing-sec-id">Fees</a>
     <!--<a href="#">Camp</a>-->
-    <a href="#">Contact</a>
+    <a href="https://wa.me/+27649883150" target="_blank">Contact</a>
   </div>
   <div class="nav-right">
-    <button class="nav-ghost">WhatsApp us</button>
-    <button class="nav-cta">Join Bukhosi</button>
+    <a href="https://wa.me/+27649883150" target="_blank">
+      <button class="nav-ghost">WhatsApp us</button>
+    </a>
+    <a href="#subjects-sec-id">
+      <button class="nav-cta">Join Bukhosi</button>
+    </a>
   </div>
 </nav>
 
@@ -246,7 +328,9 @@ footer{background:var(--ink);padding:4rem 5% 2rem}
     <p>We can't do the work for them. But we can make sure that when they sit down to study, that they actually understand what they're doing and that when exams come, they're ready.</p>
     <div class="hero-btns">
       <button class="btn-dark">Join Bukhosi</button>
-      <button class="btn-outline">How it works</button>
+      <a href="#subjects-sec-id">
+        <button class="btn-outline">How it works</button>
+      </a>
     </div>
   </div>
   <div class="hero-r">
@@ -263,19 +347,43 @@ footer{background:var(--ink);padding:4rem 5% 2rem}
 </div>
 
 <!-- SUBJECTS -->
-<section class="subjects-sec">
+<section class="subjects-sec" id="subjects-sec-id">
   <h2>Pick a subject to get started</h2>
   <p class="sub-p">We focus on the subjects that matter most for matric.</p>
   <div class="subject-tags">
-    <button class="stag">Mathematics</button>
-    <button class="stag">Math Lit</button>
-    <button class="stag">Physical Sciences</button>
-    <button class="stag">Life Sciences</button>
-    <button class="stag">Technical Sciences</button>
-    <button class="stag">Technical Maths</button>
-    <button class="stag">Accounting</button>
+    <button class="stag" onclick="selectSubject(this)">Mathematics</button>
+    <button class="stag" onclick="selectSubject(this)">Math Lit</button>
+    <button class="stag" onclick="selectSubject(this)">Physical Sciences</button>
+    <button class="stag" onclick="selectSubject(this)">Life Sciences</button>
+    <button class="stag" onclick="selectSubject(this)">Technical Sciences</button>
+    <button class="stag" onclick="selectSubject(this)">Technical Maths</button>
+    <button class="stag" onclick="selectSubject(this)">Accounting</button>
+  </div>
+  <div class="subject-enrol-wrap">
+    <button class="subject-enrol-btn" id="enrolBtn" disabled>Get started</button>
+    <span class="subject-enrol-hint" id="enrolHint">Select a subject above to continue</span>
   </div>
 </section>
+
+<script>
+function selectSubject(el) {
+  const wasActive = el.classList.contains('active');
+  document.querySelectorAll('.stag').forEach(b => b.classList.remove('active'));
+  if (!wasActive) el.classList.add('active');
+  const anyActive = document.querySelector('.stag.active');
+  const btn = document.getElementById('enrolBtn');
+  const hint = document.getElementById('enrolHint');
+  if (anyActive) {
+    btn.disabled = false;
+    btn.classList.add('enabled');
+    hint.textContent = anyActive.textContent + ' selected, click to get started';
+  } else {
+    btn.disabled = true;
+    btn.classList.remove('enabled');
+    hint.textContent = 'Select a subject above to continue';
+  }
+}
+</script>
 
 <!-- ALT 1: About -->
 <section class="alt-sec white">
@@ -305,8 +413,10 @@ footer{background:var(--ink);padding:4rem 5% 2rem}
 
 
 <!--MEET OUR TUTORS-->
-<section class="tutors-band">
-  
+<section class="tutors-band" id="tutors-sec-id">
+  <div class="tutors-heading">
+    <h2>Meet the team</h2>
+  </div>
   <div class="tutors-fullwidth" style="aspect-ratio:21/7;position:relative;overflow:hidden;background:var(--cream-dark)">
     <img src="welcometutoren_2024.jpg" alt="bukhosi group tutor photo goes here" style="width:100%;height:100%;object-fit:cover;display:block">
     <div class="tutors-fullwidth-placeholder">
@@ -315,72 +425,136 @@ footer{background:var(--ink);padding:4rem 5% 2rem}
     </div>
   </div>
   <div class="tutors-inner">
-    <h2>Meet our tutors</h2>
     <p class="sub">Here's what learners and parents say about working with them.</p>
     <div class="tutors-grid">
+      <button class="tutors-scroll-btn" id="tutorPrev" onclick="scrollTutors(-1)" disabled>
+        <i class="ti ti-arrow-left"></i>
+      </button>
+      <button class="tutors-scroll-btn" id="tutorNext" onclick="scrollTutors(1)">
+        <i class="ti ti-arrow-right"></i>
+      </button>
+      <div class="tutors-scroll-wrap">
+        <div class="tutors-track" id="tutorsTrack">
 
-      <!-- Tutor card 1 -->
-      <div class="tutor-card">
-        <div class="tutor-card-photo">
-          <div class="tutor-backdrop gold"></div>
-          <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait picture goes here">
-          <!--<div class="tutor-card-photo-placeholder">
-            <i class="ti ti-user" aria-hidden="true"></i>
-            <span>Tutor photo</span>
-          </div>-->
-        </div>
-        <div class="tutor-card-body">
-          <div class="tutor-name">Nkosi Z.C.</div>
-          <div class="tutor-subject">Mathematics, Science tutor</div>
-          <p class="tutor-review">"A testimonial from a parent about their experience with this tutor will go hereererer."</p>
-          <div class="tutor-reviewer">Parent name or child</div>
+          <!-- Tutor card 1 -->
+          <div class="tutor-card">
+            <div class="tutor-card-photo">
+              <div class="tutor-backdrop shape-circle"></div>
+              <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait">
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-name">Nkosi Z.C.</div>
+              <div class="tutor-subject">Mathematics · Science tutor</div>
+              <p class="tutor-review">"A testimonial from a parent about their experience with this tutor will go here."</p>
+              <div class="tutor-reviewer">Parent name or child</div>
+            </div>
+          </div>
+
+          <!-- Tutor card 2 -->
+          <div class="tutor-card">
+            <div class="tutor-card-photo">
+              <div class="tutor-backdrop shape-para"></div>
+              <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait">
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-name">Tutor name here</div>
+              <div class="tutor-subject">Physical Sciences tutor</div>
+              <p class="tutor-review">"A learner or parent comment about this tutor or Bukhosi goes here."</p>
+              <div class="tutor-reviewer">Name of commenter</div>
+            </div>
+          </div>
+
+          <!-- Tutor card 3 -->
+          <div class="tutor-card">
+            <div class="tutor-card-photo">
+              <div class="tutor-backdrop shape-tri"></div>
+              <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait">
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-name">Tutor name here</div>
+              <div class="tutor-subject">Life Sciences tutor</div>
+              <p class="tutor-review">"Comment from a learner or parent about this tutor goes here."</p>
+              <div class="tutor-reviewer">Name of commenter</div>
+            </div>
+          </div>
+
+          <!-- Tutor card 4 -->
+          <div class="tutor-card">
+            <div class="tutor-card-photo">
+              <div class="tutor-backdrop shape-diamond"></div>
+              <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait">
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-name">Tutor name here</div>
+              <div class="tutor-subject">Accounting tutor</div>
+              <p class="tutor-review">"Comment from a learner or parent about this tutor goes here."</p>
+              <div class="tutor-reviewer">Name of commenter</div>
+            </div>
+          </div>
+
+          <!-- Tutor card 5 -->
+          <div class="tutor-card">
+            <div class="tutor-card-photo">
+              <div class="tutor-backdrop shape-para-r"></div>
+              <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait">
+            </div>
+            <div class="tutor-card-body">
+              <div class="tutor-name">Tutor name here</div>
+              <div class="tutor-subject">Technical Sciences tutor</div>
+              <p class="tutor-review">"Comment from a learner or parent about this tutor goes here."</p>
+              <div class="tutor-reviewer">Name of commenter</div>
+            </div>
+          </div>
+
+
         </div>
       </div>
-
-      <!-- Tutor card 2 -->
-      <div class="tutor-card">
-        <div class="tutor-card-photo">
-          <div class="tutor-backdrop green"></div>
-          <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait picture goes here">
-          <!--<div class="tutor-card-photo-placeholder">
-            <i class="ti ti-user" aria-hidden="true"></i>
-            <span>Tutor photo</span>
-          </div>-->
-        </div>
-        <div class="tutor-card-body">
-          <div class="tutor-name">Other tutor name</div>
-          <div class="tutor-subject">Physical Sciences tutor</div>
-          <p class="tutor-review">"A learner or parent comment about this tutor or bukhosi hereeree"</p>
-          <div class="tutor-reviewer">Name of commenter goes here</div>
-        </div>
-      </div>
-
-      <!-- Tutor card 3 -->
-      <div class="tutor-card">
-        <div class="tutor-card-photo">
-          <div class="tutor-backdrop blue"></div>
-          <img src="IMG-20260508-WA0025.jpg" alt="tutor portrait picture goes here">
-          <!--<div class="tutor-card-photo-placeholder">
-            <i class="ti ti-user" aria-hidden="true"></i>
-            <span>Tutor photo</span>
-          </div>-->
-        </div>
-        <div class="tutor-card-body">
-          <div class="tutor-name">Othere other tutor name here</div>
-          <div class="tutor-subject">Life Sciences tutor</div>
-          <p class="tutor-review">"Comment comment comment comment hereererererererer"</p>
-          <div class="tutor-reviewer">name of commenter goes here</div>
-        </div>
-      </div>
-
+      <div class="tutors-dots" id="tutorDots"></div>
     </div>
   </div>
 </section>
 
+<script>
+(function(){
+  const track = document.getElementById('tutorsTrack');
+  const prevBtn = document.getElementById('tutorPrev');
+  const nextBtn = document.getElementById('tutorNext');
+  const dotsWrap = document.getElementById('tutorDots');
+  const cards = track.querySelectorAll('.tutor-card');
+  const perPage = 3;
+  const totalPages = Math.ceil(cards.length / perPage);
+  let current = 0;
+
+  // build dots
+  for(let i=0;i<totalPages;i++){
+    const d = document.createElement('button');
+    d.className = 'tutors-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','Page '+(i+1));
+    d.onclick = ()=>goTo(i);
+    dotsWrap.appendChild(d);
+  }
+
+  function goTo(page){
+    current = page;
+    const cardWidth = cards[0].offsetWidth + 20; // gap 1.25rem ≈ 20px
+    track.style.transform = `translateX(-${current * perPage * cardWidth}px)`;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= totalPages - 1;
+    dotsWrap.querySelectorAll('.tutors-dot').forEach((d,i)=>
+      d.classList.toggle('active', i===current));
+  }
+
+  window.scrollTutors = function(dir){ goTo(current + dir); };
+
+  // recalculate on resize
+  window.addEventListener('resize', ()=>goTo(current));
+})();
+</script>
+
 <!-- TRUST ALT -->
 <section class="trust-sec">
   <div class="trust-copy">
-    <h2>Trusted by families across provinces</h2>
+    <h2>Trusted by families across provinces.</h2>
     <p>Most of our learners find us through word of mouth and that tells you everything. Parents recommend us because of our reputable standards.</p>
     <p>We work with serious learners. That means we're honest if a learner isn't putting in the effort between sessions, we'll tell you. Our job is results, and that only happens with commitment on both sides.</p>
   </div>
@@ -402,7 +576,7 @@ footer{background:var(--ink);padding:4rem 5% 2rem}
   </div>
 </div>
 
-<section class="steps-sec" style="padding-top:3.5rem">
+<section class="steps-sec" id="steps-sec-id" style="padding-top:3.5rem">
   <h2 style="display:none">Start learning in 3 steps</h2>
   <div class="steps-grid">
     <div class="step-card">
@@ -436,7 +610,7 @@ footer{background:var(--ink);padding:4rem 5% 2rem}
 </section>
 
 <!-- FEES -->
-<section class="fees-sec">
+<section class="fees-sec" id="pricing-sec-id">
   <h2>Honest fees. No hidden costs.</h2>
   <p class="sub-p">Simple pricing. You know exactly what you're paying and what your child gets for it.</p>
 
@@ -450,6 +624,12 @@ footer{background:var(--ink);padding:4rem 5% 2rem}
       <div class="fc-dot-row"><span class="fc-dot"></span><span>Small group classes with a dedicated tutor</span></div>
       <div class="fc-dot-row"><span class="fc-dot"></span><span>Ongoing support between sessions</span></div>
       <div class="fc-dot-row"><span class="fc-dot"></span><span>Progress tracked and parents kept updated</span></div>
+      <div class="fc-sep"></div>
+      <div class="fc-reg-row">
+        <span class="fc-reg-label">Once-off registration</span>
+        <span class="fc-reg-price">R200</span>
+      </div>
+      <span class="fc-reg-note">Paid once when your child first joins. You won't be charged after that.</span>
       <button class="fc-btn">Get started</button>
     </div>
 
@@ -467,10 +647,6 @@ footer{background:var(--ink);padding:4rem 5% 2rem}
     </div>
   </div>
 
-  <div class="reg-note">
-    <i class="ti ti-info-circle" aria-hidden="true"></i>
-    <p>There is a once-off <strong>registration fee of R200</strong> when your child first joins. You won't be charged again after that.</p>
-  </div>
 </section>
 
 <!-- CTA -->
